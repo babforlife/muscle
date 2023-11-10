@@ -6,11 +6,4 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss'],
   ssr: false,
   css: ['normalize.css/normalize.css', '@/assets/styles/main.css'],
-  build: {
-    loaders: {
-      scss: {
-        implementation: require('sass'),
-      },
-    },
-  },
 })
