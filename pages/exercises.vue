@@ -1,21 +1,26 @@
 <template>
   <div class="exercise-page h-full flex flex-col overflow-auto">
-    <modal v-show="showModale" child-class="p-4 flex flex-col border-2 gap-5" @close="showModale = false">
+    <modal v-if="showModale" child-class="p-4 flex flex-col border-2 gap-5 bg-gray-100" @close="showModale = false">
       <div>Nom de l'exercice :</div>
-      <input v-model="newExercise.name" />
+      <input v-focus v-model="newExercise.name" @keyup.enter="save" />
       <button @click="save">Enregistrer</button>
     </modal>
-    <div v-for="exercise in exercises" :key="exercise._id" class="flex justify-between overflow-wrap-anywhere mx-6 py-4 text-xl">
+    <div 
+      v-for="(exercise, index) in exercises" 
+      :key="exercise._id" 
+      class="flex justify-between overflow-wrap-anywhere mx-6 py-4 text-xl"
+      :class="{ 'mb-20': index === exercises.length - 1 }"
+    >
       <span class="text-xl">- {{ exercise.name }}</span>
       <div class="flex gap-4 items-center px-2">
-        <span @click="update(exercise)">✎</span>
+        <span @click="openModale(exercise)">✎</span>
         <span @click="remove(exercise)">✗</span>
       </div>
     </div>
     <div v-if="exercises.length === 0" class="flex justify-center items-center h-full">
       <span class="text-2xl">Aucun exercice</span>
     </div>
-    <div class="absolute bottom-7 right-7 p-2 size-2xl border-2 rounded-full" @click="showModale = true">＋</div>
+    <div class="absolute bottom-7 right-7 p-2 size-2xl border-2 rounded-full bg-white" @click="openModale()">＋</div>
   </div>
 </template>
 
@@ -59,11 +64,19 @@ export default {
         .then(() => this.get())
         .catch(() => console.log('catch error'))
     },
-    update(exercise: Exercise) {
-      console.log('test :', exercise)
+    openModale(exercise = new Exercise()) {
       this.newExercise = JSON.parse(JSON.stringify(exercise))
       this.showModale = true
     },
   },
 }
 </script>
+
+<style>
+input {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 1.2rem;
+}
+</style>

@@ -6,7 +6,6 @@
     "@nuxtjs/tailwindcss": "^6.9.4",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
-    "@volar-plugins/vetur": "^0.1.0",
     "@vue/eslint-config-typescript": "^11.0.3",
     "eslint": "^8.53.0",
     "eslint-config-prettier": "^8.10.0",
@@ -18,12 +17,13 @@
     "npm-run-all": "^4.1.5",
     "nuxt": "^3.8.1",
     "prettier": "^2.8.8",
-    "vite": "4",
     "shuutils": "^7.3.2",
     "stylelint": "^14.16.1",
     "stylelint-config-standard": "^29.0.0",
     "tailwindcss": "^3.3.5",
     "typescript": "^4.9.5",
+    "vite": "4",
+    "volar-service-vetur": "^0.0.17",
     "vue": "3.3.2",
     "webpack": "^5.89.0"
   },
@@ -41,8 +41,5 @@
     "postinstall": "nuxt prepare",
     "preview": "nuxt preview"
   },
-  "version": "0.0.0",
-  "dependencies": {
-    "radix-vue": "^1.1.2"
-  }
+  "version": "0.0.0"
 }

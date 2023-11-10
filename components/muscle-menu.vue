@@ -18,10 +18,7 @@ export default {
     }
   },
   beforeMount() {
-    on('toggle-menu', (open: boolean) => {
-      console.log('open')
-      this.open = open
-    })
+    on('toggle-menu', (open: boolean) => this.open = open)
   },
 }
 </script>
