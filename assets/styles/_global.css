@@ -1,1 +1,11 @@
 html, body, #__nuxt { height: 100%; }
+
+h1 {
+  margin: 0;
+}
+
+.h-1\/10 { height: 10%; }
+
+.backdrop {
+  @apply fixed h-full w-full;
+}
