@@ -43,6 +43,7 @@
       "always"
     ],
     "unicorn/prefer-module": "off",
+    "unicorn/expiring-todo-comments": "off",
     "vue/max-attributes-per-line": "off",
     "vue/singleline-html-element-content-newline": "off",
     "vue/multi-word-component-names": "off"
