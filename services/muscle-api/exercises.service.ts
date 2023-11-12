@@ -9,9 +9,10 @@ class ExercisesService {
     return await this.manageResponse(response)
   }
 
-  public async getAll() {
+  public async getAll(): Promise<Exercise[]> {
     const response = await fetch(`${this.exercisesUrl}`, { method: 'GET' })
-    return await this.manageResponse(response)
+    const data = await this.manageResponse(response)
+    return data.map((exercise: any) => new Exercise(exercise))
   }
 
   public async delete(exercise: Exercise) {

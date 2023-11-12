@@ -1,5 +1,5 @@
 <template>
-  <div class="exercise-page h-full flex flex-col overflow-auto">
+  <div class="page-exercise h-full flex flex-col overflow-auto">
     <modal v-if="showModale" child-class="p-4 flex flex-col border-2 gap-5 bg-gray-100" @close="showModale = false">
       <div>Nom de l'exercice :</div>
       <input v-model="newExercise.name" v-focus @keyup.enter="save" />
@@ -8,7 +8,7 @@
     <div
       v-for="(exercise, index) in exercises"
       :key="exercise._id"
-      class="flex justify-between overflow-wrap-anywhere mx-6 py-4 text-xl"
+      class="flex justify-between mx-6 py-4"
       :class="{ 'mb-20': index === exercises.length - 1 }"
     >
       <span class="text-xl">- {{ exercise.name }}</span>
