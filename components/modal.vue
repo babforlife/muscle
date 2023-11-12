@@ -1,7 +1,7 @@
 <template>
   <div class="fixed flex justify-center items-center inset-0 bg-cyan-100/25" @click.self="$emit('close')">
     <div :class="childClass" @click.prevent.stop>
-      <slot></slot>
+      <slot />
     </div>
   </div>
 </template>
@@ -11,17 +11,17 @@ export default {
   props: {
     active: {
       type: Boolean,
-      default: false,
+      default: false
     },
     childClass: {
       type: String,
-      default: '',
-    },
+      default: ''
+    }
   },
   emits: ['close'],
   data() {
     return {}
-  },
+  }
 }
 </script>
 

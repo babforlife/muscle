@@ -2,7 +2,7 @@
   <div class="flex justify-between p-2 shadow-md">
     <h1 class="cursor-pointer" @click="emit('toggle-menu', true)">☰</h1>
     <h1 class="comp-menu">{{ title }}</h1>
-    <div></div>
+    <div />
   </div>
 </template>
 
@@ -14,11 +14,11 @@ export default {
   data() {
     return {
       title: '',
-      emit,
+      emit
     }
   },
   beforeMount() {
     on('header-title', (title: string) => (this.title = title))
-  },
+  }
 }
 </script>

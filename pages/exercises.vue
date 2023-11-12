@@ -2,7 +2,7 @@
   <div class="page-exercise h-full flex flex-col overflow-auto">
     <modal v-if="showModale" child-class="p-4 flex flex-col border-2 gap-5 bg-gray-100" @close="showModale = false">
       <div>Nom de l'exercice :</div>
-      <input v-model="newExercise.name" v-focus @keyup.enter="save" />
+      <input v-model="newExercise.name" v-focus @keyup.enter="save">
       <button @click="save">Enregistrer</button>
     </modal>
     <div
@@ -34,7 +34,7 @@ export default {
     return {
       exercises: [] as Exercise[],
       newExercise: new Exercise(),
-      showModale: false,
+      showModale: false
     }
   },
   beforeMount() {
@@ -50,12 +50,12 @@ export default {
           this.newExercise = new Exercise()
           this.get()
         })
-        .catch((error) => console.log('catch error,', error))
+        .catch(error => console.log('catch error,', error))
     },
     async get() {
       await exercisesService
         .getAll()
-        .then((exercises) => (this.exercises = exercises))
+        .then(exercises => (this.exercises = exercises))
         .catch(() => console.log('catch error'))
     },
     async remove(exercise: Exercise) {
@@ -67,8 +67,8 @@ export default {
     openModale(exercise = new Exercise()) {
       this.newExercise = JSON.parse(JSON.stringify(exercise))
       this.showModale = true
-    },
-  },
+    }
+  }
 }
 </script>
 

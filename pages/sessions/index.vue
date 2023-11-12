@@ -29,11 +29,11 @@ export default {
   data() {
     return {
       sessions: [] as Session[],
-      showModale: false,
+      showModale: false
     }
   },
-  beforeMount() {
-    this.getAll()
+  async beforeMount() {
+    this.sessions = await this.getAll()
     emit('header-title', 'Séances')
   },
   methods: {
@@ -41,11 +41,10 @@ export default {
       return `hsl(${360 * hue}, 100%, 95%)`
     },
     async getAll() {
-      await sessionsService
-        .getAll()
-        .then((sessions) => (this.sessions = sessions))
-        .catch(() => console.log('catch error'))
-    },
-  },
+      return await sessionsService.getAll().catch(() => {
+        throw new Error('Failed to get session')
+      })
+    }
+  }
 }
 </script>
