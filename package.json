@@ -12,6 +12,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-unicorn": "^45.0.2",
     "eslint-plugin-vue": "^9.18.1",
+    "msw": "^2.0.7",
     "normalize.css": "^8.0.1",
     "nuxt": "^3.8.1",
     "shuutils": "^7.3.2",
@@ -22,6 +23,9 @@
   },
   "description": "Muscle",
   "license": "MIT",
+  "msw": {
+    "workerDirectory": "public"
+  },
   "name": "muscle",
   "private": true,
   "scripts": {
@@ -31,6 +35,7 @@
     "lint": "run-s lint:*",
     "lint:css": "stylelint \"{assets,components,layouts,pages}/**/*.{css,vue}\" --fix",
     "lint:js": "eslint --fix --ignore-path .gitignore --ext \".js,.vue\" .",
+    "mock": "npx msw init public && NUXT_PUBLIC_MOCK=true nuxt dev",
     "postinstall": "nuxt prepare",
     "preview": "nuxt preview"
   },
