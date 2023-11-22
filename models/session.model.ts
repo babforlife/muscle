@@ -8,6 +8,6 @@ export class Session {
 
   constructor(field: Partial<Session> = {}) {
     Object.assign(this, field)
-    if (field.exercises) this.exercises = field.exercises.map((exercise) => new Exercise(exercise))
+    if (field.exercises) this.exercises = field.exercises.map(exercise => new Exercise(exercise))
   }
 }
