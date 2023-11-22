@@ -1,3 +1,9 @@
+<script setup lang="ts">
+import { on } from 'shuutils'
+const open = ref(false)
+on('toggle-menu', (openUpdate: boolean) => (open.value = openUpdate))
+</script>
+
 <template>
   <div :class="{ hidden: !open }" class="comp-menu">
     <div class="backdrop" @click="open = false" />
@@ -8,20 +14,3 @@
     </div>
   </div>
 </template>
-
-<script lang="ts">
-import { on } from 'shuutils'
-
-export default {
-  data() {
-    return {
-      open: false
-    }
-  },
-  beforeMount() {
-    on('toggle-menu', (open: boolean) => (this.open = open))
-  }
-}
-</script>
-
-<style></style>

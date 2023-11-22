@@ -1,6 +1,47 @@
+<script setup lang="ts">
+import { emit } from 'shuutils'
+import { Exercise, Session } from '~/models'
+import { exercisesService, sessionsService } from '~/services'
+
+const exercises = ref([] as Exercise[])
+const session = ref(new Session())
+
+onMounted(async () => {
+  const route = useRoute()
+  const id = route.params.id as string
+  session.value = id === 'create' ? new Session() : (await sessionsService.get(id).catch(() => { throw new Error('Failed to get session') }))
+  exercises.value = await exercisesService.getAll().catch(() => { throw new Error('Failed to get exercises') })
+  emit('header-title', session.value.name)
+})
+
+function add(exercise: Exercise) {
+  session.value.exercises.push(exercise)
+}
+
+function changeColor() {
+  session.value.color = Math.random()
+}
+
+function color() {
+  return `hsl(${360 * session.value.color}, 80%, 60%)`
+}
+
+function save() {
+  sessionsService.save(session.value)
+}
+
+function remove(exercise: Exercise) {
+  session.value.exercises = session.value.exercises.filter((ex: Exercise) => ex._id !== exercise._id)
+}
+
+const exercisesNotInSession = computed(() => {
+  if (session.value.exercises === undefined) return exercises.value
+  return exercises.value.filter((exercise: Exercise) => !session.value.exercises.some((ex: Exercise) => ex._id === exercise._id))
+})
+</script>
+
 <template>
-  <div v-if="loading" />
-  <div v-else class="page-session">
+  <div class="page-session">
     <div class="flex items-center gap-2">
       <input
         v-model="session.name"
@@ -19,59 +60,3 @@
     <NuxtLink to="/sessions"> <button @click="save">Enregistrer</button></NuxtLink>
   </div>
 </template>
-
-<script lang="ts">
-import { emit } from 'shuutils'
-import { Exercise, Session } from '~/models'
-import { exercisesService, sessionsService } from '~/services'
-
-export default {
-  data() {
-    return {
-      exercises: [] as Exercise[],
-      loading: true,
-      session: {} as Session
-    }
-  },
-  computed: {
-    exercisesNotInSession() {
-      if (this.session.exercises === undefined) return this.exercises
-      return this.exercises.filter((exercise: Exercise) => !this.session.exercises.some((ex: Exercise) => ex._id === exercise._id))
-    }
-  },
-  async beforeMount() {
-    const id = this.$route.params.id as string
-    this.session = id === 'create' ? new Session() : await this.getSession(id)
-    this.exercises = await this.getExercises()
-    emit('header-title', this.session.name)
-    this.loading = false
-  },
-  methods: {
-    add(exercise: Exercise) {
-      this.session.exercises.push(exercise)
-    },
-    changeColor() {
-      this.session.color = Math.random()
-    },
-    color() {
-      return `hsl(${360 * this.session.color}, 80%, 60%)`
-    },
-    async getExercises() {
-      return await exercisesService.getAll().catch(() => {
-        throw new Error('Failed to get exercises')
-      })
-    },
-    async getSession(id: string) {
-      return await sessionsService.get(id).catch(() => {
-        throw new Error('Failed to get session')
-      })
-    },
-    save() {
-      sessionsService.save(this.session)
-    },
-    remove(exercise: Exercise) {
-      this.session.exercises = this.session.exercises.filter((ex: Exercise) => ex._id !== exercise._id)
-    }
-  }
-}
-</script>

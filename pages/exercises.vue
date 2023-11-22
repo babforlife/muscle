@@ -1,10 +1,46 @@
+<script setup lang="ts">
+import { emit } from 'shuutils'
+import { exercisesService } from '~/services'
+import { Exercise } from '~/models'
+
+const exercises = ref([] as Exercise[])
+const newExercise = ref(new Exercise())
+const showModale = ref(false)
+
+onMounted(async () => {
+  exercises.value = await exercisesService.getAll().catch(() => { throw new Error('Failed to get exercises') })
+  emit('header-title', 'Exercices')
+})
+
+async function save() {
+  await exercisesService.save(new Exercise(newExercise.value)).then(() => {
+    showModale.value = false
+    newExercise.value = new Exercise()
+    get()
+  }).catch(error => console.log('catch error,', error))
+}
+
+async function get() {
+  await exercisesService.getAll().then(exercisesUpdate => exercises.value = exercisesUpdate).catch(() => console.log('catch error'))
+}
+
+async function remove(exercise: Exercise) {
+  await exercisesService.delete(exercise).then(() => get()).catch(() => console.log('catch error'))
+}
+
+function openModale(exercise = new Exercise()) {
+  newExercise.value = JSON.parse(JSON.stringify(exercise))
+  showModale.value = true
+}
+</script>
+
 <template>
   <div class="page-exercise h-full flex flex-col overflow-auto">
-    <modal v-if="showModale" child-class="p-4 flex flex-col border-2 gap-5 bg-gray-100" @close="showModale = false">
+    <Modal v-if="showModale" child-class="p-4 flex flex-col border-2 gap-5 bg-gray-100" @close="showModale = false">
       <div>Nom de l'exercice :</div>
       <input v-model="newExercise.name" v-focus @keyup.enter="save">
       <button @click="save">Enregistrer</button>
-    </modal>
+    </Modal>
     <div
       v-for="(exercise, index) in exercises"
       :key="exercise._id"
@@ -23,54 +59,6 @@
     <div class="absolute bottom-7 right-7 p-2 size-2xl border-2 rounded-full bg-white" @click="openModale()">＋</div>
   </div>
 </template>
-
-<script lang="ts">
-import { emit } from 'shuutils'
-import { exercisesService } from '~/services'
-import { Exercise } from '~/models'
-
-export default {
-  data() {
-    return {
-      exercises: [] as Exercise[],
-      newExercise: new Exercise(),
-      showModale: false
-    }
-  },
-  beforeMount() {
-    this.get()
-    emit('header-title', 'Exercices')
-  },
-  methods: {
-    async save() {
-      await exercisesService
-        .save(this.newExercise)
-        .then(() => {
-          this.showModale = false
-          this.newExercise = new Exercise()
-          this.get()
-        })
-        .catch(error => console.log('catch error,', error))
-    },
-    async get() {
-      await exercisesService
-        .getAll()
-        .then(exercises => (this.exercises = exercises))
-        .catch(() => console.log('catch error'))
-    },
-    async remove(exercise: Exercise) {
-      await exercisesService
-        .delete(exercise)
-        .then(() => this.get())
-        .catch(() => console.log('catch error'))
-    },
-    openModale(exercise = new Exercise()) {
-      this.newExercise = JSON.parse(JSON.stringify(exercise))
-      this.showModale = true
-    }
-  }
-}
-</script>
 
 <style>
 input {

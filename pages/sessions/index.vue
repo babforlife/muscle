@@ -1,3 +1,21 @@
+<script setup lang="ts">
+import { emit } from 'shuutils'
+import { sessionsService } from '~/services'
+import { Session } from '~/models'
+
+const sessions = ref([] as Session[])
+const showModale = ref(false)
+
+onMounted(async () => {
+  sessions.value = await sessionsService.getAll().catch(() => { throw new Error('Failed to get session') })
+  emit('header-title', 'Séances')
+})
+
+function color(hue: number) {
+  return `hsl(${360 * hue}, 100%, 95%)`
+}
+</script>
+
 <template>
   <div class="page-sessions h-full flex flex-col overflow-auto gap-4 mt-4">
     <NuxtLink
@@ -19,32 +37,3 @@
     <NuxtLink to="/sessions/create" class="absolute bottom-7 right-7 p-2 size-2xl border-2 rounded-full" @click="showModale = true">＋</NuxtLink>
   </div>
 </template>
-
-<script lang="ts">
-import { emit } from 'shuutils'
-import { sessionsService } from '~/services'
-import { Session } from '~/models'
-
-export default {
-  data() {
-    return {
-      sessions: [] as Session[],
-      showModale: false
-    }
-  },
-  async beforeMount() {
-    this.sessions = await this.getAll()
-    emit('header-title', 'Séances')
-  },
-  methods: {
-    color(hue: number) {
-      return `hsl(${360 * hue}, 100%, 95%)`
-    },
-    async getAll() {
-      return await sessionsService.getAll().catch(() => {
-        throw new Error('Failed to get session')
-      })
-    }
-  }
-}
-</script>
