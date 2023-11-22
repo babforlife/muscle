@@ -34,6 +34,7 @@
       }
     ],
     "max-statements-per-line": "off",
+    "no-return-assign": "off",
     "no-console": "off",
     "no-unused-vars": "off",
     "space-before-function-paren":"off",
