@@ -1,21 +1,17 @@
 <script setup lang="ts">
-import { Series, RunningExercise, Exercise } from '~/models'
+import { Series, SeriesExercise, Exercise } from '~/models'
 
-const properties = defineProps<{ current: RunningExercise, remaining: Exercise[]}>()
+const properties = defineProps<{ current: SeriesExercise, remaining: Exercise[]}>()
 const emit = defineEmits(['next-series', 'next-exercise'])
 
-const series = ref(new Series())
+const series = ref(new Series({ repetitions: 8, weight: 10 }))
 const showDetails = ref(false)
-const rest = ref(90)
+const rest = ref(0)
 
 onMounted(() => {
   const lastSeries = properties.current.series[properties.current.series.length - 1]
+  if (!lastSeries) return
   series.value = new Series({ repetitions: lastSeries?.repetitions, weight: lastSeries?.weight })
-})
-
-const nextExerciseDisplay = computed(() => {
-  if (properties.remaining.length === 0) return 'Terminer'
-  return properties.current.series.length === 0 ? 'Passer l\'exercice' : 'Prochain exercice'
 })
 
 function nextSeries() {
@@ -26,6 +22,11 @@ function nextExercise() {
   if (properties.current.series.length > 0) nextSeries()
   emit('next-exercise')
 }
+
+const nextExerciseDisplay = computed(() => {
+  if (properties.remaining.length === 0) return 'Terminer'
+  return properties.current.series.length === 0 ? 'Passer l\'exercice' : 'Prochain exercice'
+})
 </script>
 
 <template>

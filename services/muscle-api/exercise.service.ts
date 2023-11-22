@@ -1,7 +1,8 @@
+import { BaseService } from './base.service'
 import { environment } from '~/environments'
 import { Exercise } from '~/models'
 
-class ExercisesService {
+class ExerciseService extends BaseService {
   exercisesUrl = environment.apiUrl + '/exercise'
 
   public async save(exercise: Exercise) {
@@ -19,11 +20,5 @@ class ExercisesService {
     const response = await fetch(`${this.exercisesUrl}/${exercise._id}`, { method: 'DELETE', body: JSON.stringify(exercise) })
     return await this.manageResponse(response)
   }
-
-  private async manageResponse(response: any) {
-    const data = await response.json()
-    if (data.errorMessage) throw new Error(data.errorMessage)
-    return data
-  }
 }
-export const exercisesService = new ExercisesService()
+export const exerciseService = new ExerciseService()

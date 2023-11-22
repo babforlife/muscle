@@ -1,36 +1,39 @@
 <script setup lang="ts">
-import { RunningSession, Series } from '~/models'
-import { sessionsService } from '~/services'
+import { Series, Session } from '~/models'
+import { programService, sessionService } from '~/services'
 
-const session = ref(new RunningSession())
+const session = ref(new Session())
 const rest = ref(new Date())
 
 onMounted(async () => {
   rest.value = new Date(JSON.parse(localStorage.getItem('rest') as string))
 
-  const state = localStorage.getItem('running') as string
-  if (state) return session.value = new RunningSession(JSON.parse(state))
+  const state = localStorage.getItem('session') as string
+  if (state) return session.value = new Session(JSON.parse(state))
 
   const route = useRoute()
-  const sessionData = await sessionsService.get(route.params.id).catch(() => {
-    throw new Error('Failed to get session')
-  })
-  session.value = new RunningSession({ remaining: sessionData.exercises })
+  const sessionData = await programService.get(route.params.id).catch(() => { throw new Error('Failed to get program') })
+  session.value = new Session({ remaining: sessionData.exercises, start: new Date() })
   nextExercise()
 })
 
 const state = computed((): 'loading' | 'exercise' | 'resting' | 'finished' => {
-  if (!session.value.active || !session.value.remaining || !session.value.finished) return 'loading'
-  if (!session.value.active?.exercise._id && session.value.remaining?.length === 0) return 'finished'
+  if (!session.value.start) return 'loading'
+  if (session.value.finished.length === session.value.total) return 'finished'
   if (session.value.active?.exercise._id && rest.value && rest.value.getTime() > Date.now()) return 'resting'
   return 'exercise'
 })
 
+watchEffect(() => {
+  if (state.value !== 'finished') return
+  sessionService.save(session.value)
+  localStorage.removeItem('session')
+})
+
 const progress = computed(() => {
-  const total = session.value.finished?.length + session.value.remaining?.length + (session.value.active?.exercise._id ? 1 : 0)
   const doneExercises = session.value.finished?.length
   const doneSeries = Math.min(1, session.value.active?.series.length / 5)
-  return `${(doneExercises + doneSeries) / total * 100}%`
+  return `${(doneExercises + doneSeries) / session.value.total * 100}%`
 })
 
 function nextExercise() {
@@ -55,7 +58,7 @@ function resetRest() {
 }
 
 function save() {
-  localStorage.setItem('running', JSON.stringify(session.value))
+  localStorage.setItem('session', JSON.stringify(session.value))
 }
 </script>
 

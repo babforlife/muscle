@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { emit } from 'shuutils'
-import { exercisesService } from '~/services'
+import { exerciseService } from '~/services'
 import { Exercise } from '~/models'
 
 const exercises = ref([] as Exercise[])
@@ -8,12 +8,12 @@ const newExercise = ref(new Exercise())
 const showModale = ref(false)
 
 onMounted(async () => {
-  exercises.value = await exercisesService.getAll().catch(() => { throw new Error('Failed to get exercises') })
+  exercises.value = await exerciseService.getAll().catch(() => { throw new Error('Failed to get exercises') })
   emit('header-title', 'Exercices')
 })
 
 async function save() {
-  await exercisesService.save(new Exercise(newExercise.value)).then(() => {
+  await exerciseService.save(new Exercise(newExercise.value)).then(() => {
     showModale.value = false
     newExercise.value = new Exercise()
     get()
@@ -21,11 +21,11 @@ async function save() {
 }
 
 async function get() {
-  await exercisesService.getAll().then(exercisesUpdate => exercises.value = exercisesUpdate).catch(() => console.log('catch error'))
+  await exerciseService.getAll().then(exercisesUpdate => exercises.value = exercisesUpdate).catch(() => console.log('catch error'))
 }
 
 async function remove(exercise: Exercise) {
-  await exercisesService.delete(exercise).then(() => get()).catch(() => console.log('catch error'))
+  await exerciseService.delete(exercise).then(() => get()).catch(() => console.log('catch error'))
 }
 
 function openModale(exercise = new Exercise()) {

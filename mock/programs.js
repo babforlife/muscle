@@ -13,4 +13,4 @@ export const dos = {
   exercises: [tractions, rowingHaltere, rowingBarre, souleveDeTerre]
 }
 
-export const sessions = [pectoraux, dos]
+export const programs = [pectoraux, dos]
