@@ -16,14 +16,14 @@ export default defineNuxtPlugin(() => {
 })
 
 const programsHandlers = [
-  http.get(programService.programsUrl, () => HttpResponse.json([...programs])),
-  http.get(`${programService.programsUrl}/1`, () => HttpResponse.json(pectoraux)),
-  http.get(`${programService.programsUrl}/2`, () => HttpResponse.json(dos)),
-  http.get(`${programService.programsUrl}/*`, () => HttpResponse.json(pectoraux))
+  http.get(programService.url, () => HttpResponse.json([...programs])),
+  http.get(`${programService.url}/1`, () => HttpResponse.json(pectoraux)),
+  http.get(`${programService.url}/2`, () => HttpResponse.json(dos)),
+  http.get(`${programService.url}/*`, () => HttpResponse.json(pectoraux))
 ]
 
 const exercisesHandlers = [
-  http.get(exerciseService.exercisesUrl, () => HttpResponse.json([...exercises]))
+  http.get(exerciseService.url, () => HttpResponse.json([...exercises]))
 ]
 
 const activitiesHandlers = [

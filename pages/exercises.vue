@@ -35,7 +35,7 @@ function openModale(exercise = new Exercise()) {
 </script>
 
 <template>
-  <div class="page-exercise h-full flex flex-col overflow-auto">
+  <div class="page-exercise h-full flex flex-col">
     <Modal v-if="showModale" child-class="p-4 flex flex-col border-2 gap-5 bg-gray-100" @close="showModale = false">
       <div>Nom de l'exercice :</div>
       <input v-model="newExercise.name" v-focus @keyup.enter="save">

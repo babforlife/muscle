@@ -17,7 +17,7 @@ function color(hue: number) {
 </script>
 
 <template>
-  <div class="page-programs h-full flex flex-col overflow-auto gap-4 mt-4">
+  <div class="page-programs h-full flex flex-col gap-4 mt-4">
     <NuxtLink
       v-for="(program, index) in programs"
       :key="program._id"
