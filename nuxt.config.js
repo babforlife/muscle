@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   typescript: {
     shim: false
   },
-  plugins: ['~/plugins/directives.js', '~/plugins/msw.js'],
+  plugins: ['~/plugins/directives.js', '~/plugins/msw.js', '~/plugins/highcharts.js'],
   modules: ['@nuxtjs/tailwindcss'],
   ssr: false,
   css: ['normalize.css/normalize.css', '@/assets/styles/main.css'],

@@ -1,5 +1,9 @@
 {
   "author": "Guillaume Malek <guillaume.malek@outlook.fr>",
+  "dependencies": {
+    "highcharts": "^11.2",
+    "highcharts-vue": "^1.4.3"
+  },
   "devDependencies": {
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
     "@nuxtjs/tailwindcss": "^6.9.4",
