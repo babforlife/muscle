@@ -11,6 +11,7 @@ on('toggle-menu', (openUpdate: boolean) => (open.value = openUpdate))
       <NuxtLink to="/" @click="open = false">Dashboard</NuxtLink>
       <NuxtLink to="/programs" @click="open = false">Programmes</NuxtLink>
       <NuxtLink to="/exercises" @click="open = false">Exercices</NuxtLink>
+      <NuxtLink to="/activity" @click="open = false">Activités</NuxtLink>
     </div>
   </div>
 </template>
