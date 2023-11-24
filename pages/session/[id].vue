@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Series, Session } from '~/models'
-import { programService, sessionService } from '~/services'
+import { programService, activityService } from '~/services'
 
 const session = ref(new Session())
 const rest = ref(new Date())
@@ -26,7 +26,7 @@ const state = computed((): 'loading' | 'exercise' | 'resting' | 'finished' => {
 
 watchEffect(() => {
   if (state.value !== 'finished') return
-  sessionService.save(session.value)
+  activityService.save(session.value)
   localStorage.removeItem('session')
 })
 
