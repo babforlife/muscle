@@ -2,6 +2,7 @@
 import { emit } from 'shuutils'
 import { programService } from '~/services'
 import { Program } from '~/models'
+import { hueToColor } from '~/utils'
 
 const programs = ref([] as Program[])
 const showModale = ref(false)
@@ -10,10 +11,6 @@ onMounted(async () => {
   programs.value = await programService.getAll().catch(() => { throw new Error('Failed to get programs') })
   emit('header-title', 'Séances')
 })
-
-function color(hue: number) {
-  return `hsl(${360 * hue}, 100%, 95%)`
-}
 </script>
 
 <template>
@@ -24,7 +21,7 @@ function color(hue: number) {
       :to="'/programs/' + program._id"
       class="flex flex-col justify-between items-center p-4 mx-4 border-2 rounded-xl border-gray-300"
       :class="{ 'mb-20': index === programs.length - 1 }"
-      :style="{ 'background-color': color(program.color) }"
+      :style="{ 'background-color': hueToColor(program.color) }"
     >
       <h2 class="text-xl">{{ program.name }}</h2>
       <div class="flex flex-wrap text-xs text-gray-500 gap-1 justify-center">
