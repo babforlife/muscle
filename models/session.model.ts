@@ -10,6 +10,7 @@ export class Series {
 }
 
 export class SeriesExercise {
+  _id?: string
   exercise = new Exercise()
   series: Series[] = []
 
@@ -21,9 +22,11 @@ export class SeriesExercise {
 
 export class Session {
   active = new SeriesExercise()
+  color = 0
   finished: SeriesExercise[] = []
+  name = ''
   remaining: Exercise[] = []
-  start?: Date
+  start = new Date()
 
   constructor(field: Partial<Session> = {}) {
     Object.assign(this, field)

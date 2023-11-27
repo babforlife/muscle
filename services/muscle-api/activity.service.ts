@@ -18,8 +18,13 @@ class ActivityService extends BaseService {
   }
 
   public async save(session: Session) {
-    const activity = new Activity({ start: session.start, session: session.finished })
+    const activity = new Activity({ start: session.start, session: session.finished, end: new Date(), name: session.name, color: session.color })
     const response = await fetch(`${this.url}`, { method: 'POST', body: JSON.stringify(activity) })
+    return await this.manageResponse(response)
+  }
+
+  public async remove(id: string) {
+    const response = await fetch(`${this.url}/${id}`, { method: 'DELETE' })
     return await this.manageResponse(response)
   }
 }

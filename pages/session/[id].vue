@@ -12,14 +12,14 @@ onMounted(async () => {
   if (state) return session.value = new Session(JSON.parse(state))
 
   const route = useRoute()
-  const sessionData = await programService.get(route.params.id).catch(() => { throw new Error('Failed to get program') })
-  session.value = new Session({ remaining: sessionData.exercises, start: new Date() })
+  const program = await programService.get(route.params.id).catch(() => { throw new Error('Failed to get program') })
+  session.value = new Session({ remaining: program.exercises, start: new Date(), name: program.name, color: program.color })
   nextExercise()
 })
 
 const state = computed((): 'loading' | 'exercise' | 'resting' | 'finished' => {
   if (!session.value.start) return 'loading'
-  if (session.value.finished.length === session.value.total) return 'finished'
+  if (session.value.finished.length > 0 && session.value.finished.length === session.value.total) return 'finished'
   if (session.value.active?.exercise._id && rest.value && rest.value.getTime() > Date.now()) return 'resting'
   return 'exercise'
 })

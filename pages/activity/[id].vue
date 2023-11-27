@@ -9,6 +9,11 @@ onMounted(async () => {
   const route = useRoute()
   activity.value = await activityService.get(route.params.id).catch(() => { throw new Error('Failed to get activity') })
 })
+
+async function remove() {
+  await activityService.remove(activity.value._id).catch(() => { throw new Error('Failed to remove activity') })
+  await navigateTo('/activity')
+}
 </script>
 
 <template>
@@ -18,5 +23,6 @@ onMounted(async () => {
     <div v-for="exercise in activity.session" :key="exercise.exercise._id">
       <charts-exercise :exercise="exercise" />
     </div>
+    <button @click="remove">supprimer</button>
   </div>
 </template>
