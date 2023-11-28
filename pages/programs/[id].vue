@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { emit } from 'shuutils'
+import draggable from 'vuedraggable'
 import { Exercise, Program } from '~/models'
 import { exerciseService, programService } from '~/services'
 
@@ -51,7 +52,11 @@ const exercisesNotInProgram = computed(() => {
       <div class="w-1/6 h-10 rounded-lg border-2 border-gray-200" :style="{ 'background-color': color() }" @click="changeColor()" />
     </div>
     <div class="flex flex-col">
-      <span v-for="exercise in program.exercises" :key="exercise._id" @click="remove(exercise)">{{ exercise.name }}</span>
+      <draggable v-model="program.exercises" :item-key="program._id">
+        <template #item="{element}">
+          <div @click="remove(element)">{{ element.name }}</div>
+        </template>
+      </draggable>
     </div>
     <span class="underline">Ajouter des exercices :</span>
     <div class="flex flex-col">
