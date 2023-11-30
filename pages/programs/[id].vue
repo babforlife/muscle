@@ -10,7 +10,7 @@ const program = ref(new Program())
 onMounted(async () => {
   const route = useRoute()
   const id = route.params.id as string
-  program.value = id === 'create' ? new Program() : (await programService.get(id).catch(() => { throw new Error('Failed to get program') }))
+  if (id !== 'create') program.value = await programService.get(id).catch(() => { throw new Error('Failed to get program') })
   exercises.value = await exerciseService.getAll().catch(() => { throw new Error('Failed to get exercises') })
   emit('header-title', program.value.name)
 })

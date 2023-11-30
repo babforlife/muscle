@@ -5,7 +5,6 @@ import { Program } from '~/models'
 import { hueToColor } from '~/utils'
 
 const programs = ref([] as Program[])
-const showModale = ref(false)
 
 onMounted(async () => {
   programs.value = await programService.getAll().catch(() => { throw new Error('Failed to get programs') })
@@ -31,6 +30,6 @@ onMounted(async () => {
         </div>
       </div>
     </NuxtLink>
-    <NuxtLink to="/programs/create" class="absolute bottom-7 right-7 p-2 size-2xl border-2 rounded-full" @click="showModale = true">＋</NuxtLink>
+    <NuxtLink to="/programs/create" class="absolute bottom-7 right-7 p-2 size-2xl border-2 rounded-full">＋</NuxtLink>
   </div>
 </template>
