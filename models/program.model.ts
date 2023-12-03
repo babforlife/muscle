@@ -2,7 +2,6 @@ import { Exercise } from './exercise.model'
 
 export class Program {
   _id = ''
-  color = 0
   name = ''
   exercises: Exercise[] = []
 

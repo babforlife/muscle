@@ -13,7 +13,7 @@ onMounted(async () => {
 
   const route = useRoute()
   const program = await programService.get(route.params.id).catch(() => { throw new Error('Failed to get program') })
-  session.value = new Session({ remaining: program.exercises, start: new Date(), name: program.name, color: program.color })
+  session.value = new Session({ remaining: program.exercises, start: new Date(), name: program.name })
   nextExercise()
 })
 

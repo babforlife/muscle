@@ -22,7 +22,6 @@ export class SeriesExercise {
 
 export class Session {
   active = new SeriesExercise()
-  color = 0
   finished: SeriesExercise[] = []
   name = ''
   remaining: Exercise[] = []

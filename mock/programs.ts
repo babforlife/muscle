@@ -10,7 +10,6 @@ export const pectoraux = new Program({
 export const dos = new Program({
   _id: '2',
   name: 'Dos',
-  color: 0.5,
   exercises: [tractions, rowingHaltere, rowingBarre, souleveDeTerre]
 })
 

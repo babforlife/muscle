@@ -13,16 +13,12 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex flex-col gap-2">
-    <NuxtLink
-      v-for="activity in activities"
-      :key="activity._id"
-      :to="`/activity/${activity._id}`"
-      class="border py-2 px-1"
-      :style="{ 'background-color': hueToColor(activity.color) }"
-    >
-      <h1 class="text-xl">{{ activity.name }}</h1>
-      <span class="text-xs pl-2 italic">Activité du {{ dateToString(activity.start) }}</span>
-    </NuxtLink>
+  <div class="col h-full">
+    <div class="col gap-3 overflow-auto flex-1">
+      <NuxtLink v-for="activity in activities" :key="activity._id" :to="`/activity/${activity._id}`" class="border py-2 px-1">
+        <h1 class="text-xl">{{ activity.name }}</h1>
+        <span class="text-xs pl-2 italic">Activité du {{ dateToString(activity.start) }}</span>
+      </NuxtLink>
+    </div>
   </div>
 </template>
