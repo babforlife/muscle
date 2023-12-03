@@ -1,11 +1,13 @@
 <script setup lang="ts">
+import { emit } from 'shuutils'
 import { Activity } from '~/models'
 import { activityService } from '~/services'
-import { dateToString, hueToColor } from '~/utils'
+import { dateToString } from '~/utils'
 
 const activities = ref([] as Activity[])
 
 onMounted(() => {
+  emit('header', { title: 'Activités' })
   activityService.getAll().then(activitiesGet => activities.value = activitiesGet).catch(() => { throw new Error('Failed to get activities') })
 })
 </script>

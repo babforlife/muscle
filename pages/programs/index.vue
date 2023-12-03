@@ -7,9 +7,7 @@ import { hueToColor } from '~/utils'
 const programs = ref([] as Program[])
 
 onMounted(async () => {
-  programs.value = await programService.getAll().catch(() => { throw new Error('Failed to get programs') })
-  emit('header-title', 'Séances')
-})
+  emit('header', { title: 'Programmes', search: true })
 </script>
 
 <template>

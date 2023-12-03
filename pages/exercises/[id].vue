@@ -7,6 +7,7 @@ const exercise = ref(new Exercise())
 const activities = ref([] as SeriesExercise[])
 
 onMounted(async () => {
+  emit('header', { title: 'Exercice', navigation: true, edit: true })
   const route = useRoute()
   const id = route.params.id as string
   if (id !== 'create') {

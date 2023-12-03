@@ -6,7 +6,7 @@ import { Exercise } from '~/models'
 const exercises = ref([] as Exercise[])
 
 onMounted(async () => {
-  exercises.value = await exerciseService.getAll().catch(() => { throw new Error('Failed to get exercises') })
+  emit('header', { title: 'Exercices', search: true })
   emit('header-title', 'Exercices')
 })
 
