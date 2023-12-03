@@ -1,50 +1,46 @@
 <script setup lang="ts">
+import { PlusCircleIcon } from '@heroicons/vue/24/solid'
 import { emit } from 'shuutils'
 import { exerciseService } from '~/services'
 import { Exercise } from '~/models'
 
 const exercises = ref([] as Exercise[])
+const newExercise = ref(new Exercise())
+const showModal = ref(false)
 
 onMounted(async () => {
   emit('header', { title: 'Exercices', search: true })
-  emit('header-title', 'Exercices')
+  await get()
 })
 
 async function get() {
-  await exerciseService.getAll().then(exercisesUpdate => exercises.value = exercisesUpdate).catch(() => console.log('catch error'))
+  await exerciseService.getAll().then(exercisesUpdate => exercises.value = exercisesUpdate).catch(() => console.log('Failed to get exercises'))
 }
 
-async function remove(exercise: Exercise) {
-  await exerciseService.delete(exercise).then(() => get()).catch(() => console.log('catch error'))
+async function save() {
+  await exerciseService.save(newExercise.value).then(() => get()).catch(() => console.log('Failed to save exercise'))
+  showModal.value = false
 }
 </script>
 
 <template>
-  <div class="page-exercise h-full flex flex-col">
-    <div
-      v-for="(exercise, index) in exercises"
-      :key="exercise._id"
-      class="flex justify-between mx-6 py-4"
-      :class="{ 'mb-20': index === exercises.length - 1 }"
-    >
-      <span class="text-xl">- {{ exercise.name }}</span>
-      <div class="flex gap-4 items-center px-2">
-        <NuxtLink :to="'/exercises/' + exercise._id">✎</NuxtLink>
-        <span @click="remove(exercise)">✗</span>
+  <div class="col h-full relative">
+    <div class="col gap-3 flex-1 py-4 overflow-auto">
+      <NuxtLink v-for="exercise in exercises" :key="exercise._id" :to="'/exercises/' + exercise._id" class="list-item">
+        <h2 class="text-xl">{{ exercise.name }}</h2>
+      </NuxtLink>
+      <div class="mb-14" />
+    </div>
+    <NuxtLink class="absolute bottom-5 right-5 icon-16 text-indigo-500" @click="showModal = true"><PlusCircleIcon /></NuxtLink>
+    <Modal v-if="showModal" @close="showModal=false">
+      <h2>Création d'un exercice</h2>
+      <label>Nom
+        <input v-model="newExercise.name" v-focus @keyup.enter="save">
+      </label>
+      <div class="flex gap-3 justify-center">
+        <button theme="primary" @click="save">Enregistrer</button>
+        <button theme="primary" @click="showModal=false">Fermer</button>
       </div>
-    </div>
-    <div v-if="exercises.length === 0" class="flex justify-center items-center h-full">
-      <span class="text-2xl">Aucun exercice</span>
-    </div>
-    <NuxtLink to="/exercises/create" class="absolute bottom-7 right-7 p-2 size-2xl border-2 rounded-full">＋</NuxtLink>
+    </Modal>
   </div>
 </template>
-
-<style>
-input {
-  border: 1px solid black;
-  border-radius: 5px;
-  padding: 5px;
-  font-size: 1.2rem;
-}
-</style>
