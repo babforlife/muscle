@@ -30,7 +30,7 @@ function add() {
   <div class="w-full h-full flex items-center flex-col gap-8">
     <span class="text-2xl">Temps de repos</span>
     <span class="text-8xl">{{ display }}</span>
-    <div class="flex flex-col gap-3">
+    <div class="col gap-3">
       <button class="border-2 p-2" @click="add()">Ajouter 15 secondes</button>
       <button class="border-2 p-2" @click="$emit('done')">Passer</button>
     </div>

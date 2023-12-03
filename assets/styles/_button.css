@@ -1,0 +1,23 @@
+button {
+  @apply px-4 py-2 border-2 rounded-lg font-medium;
+}
+
+button[theme='primary'] {
+  @apply bg-indigo-400 text-indigo-50 border-indigo-400;
+}
+
+button[theme='primary']:disabled {
+  @apply bg-indigo-200 text-white border-indigo-200;
+}
+
+button[theme='danger'] {
+  @apply bg-red-400 text-indigo-50 border-red-400;
+}
+
+a:active, button:active {
+  transform: translateY(1px);
+}
+
+a:active:disabled, button:active:disabled {
+  transform: none;
+}
