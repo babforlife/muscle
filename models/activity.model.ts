@@ -2,7 +2,6 @@ import { SeriesExercise } from '~/models'
 
 export class Activity {
   _id = ''
-  color = 0
   name = ''
   start: Date
   end: Date
