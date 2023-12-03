@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { emit } from 'shuutils'
 import { Activity } from '~/models'
 import { activityService } from '~/services'
 import { dateToString } from '~/utils'
@@ -6,6 +7,7 @@ import { dateToString } from '~/utils'
 const activity = ref(new Activity())
 
 onMounted(async () => {
+  emit('header', { title: 'Activité', navigation: true })
   const route = useRoute()
   activity.value = await activityService.get(route.params.id).catch(() => { throw new Error('Failed to get activity') })
 })

@@ -8,6 +8,7 @@ const exercises = ref([] as Exercise[])
 const program = ref(new Program())
 
 onMounted(async () => {
+  emit('header', { title: 'Programme', navigation: true, edit: true })
   const route = useRoute()
   const id = route.params.id as string
   if (id !== 'create') program.value = await programService.get(id).catch(() => { throw new Error('Failed to get program') })
