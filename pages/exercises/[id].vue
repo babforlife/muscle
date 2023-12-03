@@ -31,7 +31,7 @@ async function remove() {
 </script>
 
 <template>
-  <div class="h-full">
+  <div class="h-full py-2">
     <h2>{{ exercise.name }}</h2>
     <div v-if="activities.length === 0" class="flex gap-2 text-2xl flex-col justify-center items-center">No data found</div>
     <div v-for="activity in activities" v-else :key="activity._id">
