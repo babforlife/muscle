@@ -55,7 +55,7 @@ async function remove() {
 </script>
 
 <template>
-  <div class="col overflow-hidden h-full">
+  <div class="col overflow-hidden h-full py-2">
     <h2>{{ program.name }}</h2>
     <draggable v-model="program.exercises" :disabled="!edit" :item-key="program._id" class="col gap-3 w-full min-w-[80%] flex-1 overflow-auto">
       <template #item="{element, index}">
@@ -68,7 +68,7 @@ async function remove() {
         </div>
       </template>
     </draggable>
-    <div class="p-2 row justify-evenly">
+    <div class="px-2 row justify-evenly">
       <button theme="primary" @click="edit=!edit">{{ edit? 'Annuler' : 'Modifier' }}</button>
       <button v-if="edit" theme="primary" @click="() => {save(); edit=false}">Valider</button>
       <button v-if="!edit" theme="primary" @click="modalState = 'add'">Ajouter un exercice</button>
