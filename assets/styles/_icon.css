@@ -1,0 +1,7 @@
+.icon-8 {
+  @apply cursor-pointer h-8 w-8;
+}
+
+.icon-16 {
+  @apply cursor-pointer h-16 w-16;
+}

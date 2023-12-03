@@ -40,13 +40,13 @@ const nextExerciseDisplay = computed(() => {
       <div v-for="exercise in remaining" :key="exercise._id">{{ exercise.name }}</div>
     </div>
     <h3 class="text-center">Série : {{ current.series.length + 1 }}</h3>
-    <div class="flex flex-col">
+    <div class="col">
       <h2>Répétitions</h2>
       <input v-model="series.repetitions" class="border-2 h-10 w-1/5 self-center" type="number">
       <h2>Poids</h2>
       <input v-model="series.weight" class="border-2 h-10 w-1/5 self-center" type="number">
     </div>
-    <h2 class="text-center text-xl">Temps de repos</h2>
+    <h2>Temps de repos</h2>
     <Timer :seconds="rest" @time="rest = $event" />
     <button class="border-2 text-3xl p-2" @click="nextSeries()">Suivant</button>
     <button class="border-2 text-3xl p-2" @click="nextExercise()">{{ nextExerciseDisplay }}</button>

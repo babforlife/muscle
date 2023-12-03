@@ -1,6 +1,7 @@
 {
   "author": "Guillaume Malek <guillaume.malek@outlook.fr>",
   "dependencies": {
+    "@heroicons/vue": "^2.0.18",
     "highcharts": "^11.2",
     "highcharts-vue": "^1.4.3"
   },
