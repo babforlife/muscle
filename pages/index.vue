@@ -1,15 +1,11 @@
 <script setup lang="ts">
-import { emit } from 'shuutils'
 import { Program } from '~/models'
 import { programService } from '~/services'
 
 const active = ref(new Program())
 const programs = ref([] as Program[])
 
-onMounted(async () => {
-  emit('header-title', 'Dashboard')
-  programs.value = await getAll()
-})
+onMounted(async () => programs.value = await getAll())
 
 async function getAll() {
   return await programService.getAll().catch(() => { throw new Error('Failed to get programs') })
