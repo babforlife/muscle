@@ -5,6 +5,7 @@ import { programService } from '~/services'
 
 const active = ref(new Program())
 const programs = ref([] as Program[])
+const showModal = ref(false)
 
 onMounted(async () => {
   emit('header', new Header({ title: 'Démarrer une session' }))
@@ -14,10 +15,24 @@ onMounted(async () => {
 async function getAll() {
   return await programService.getAll().catch(() => { throw new Error('Failed to get programs') })
 }
+
+async function start() {
+  if (unfinishedSession()) return showModal.value = true
+  await confirm()
+}
+
+async function confirm() {
+  localStorage.removeItem('session')
+  await navigateTo(`/session/${active.value._id}`)
+}
+
+function unfinishedSession() {
+  return !!localStorage.getItem('session')
+}
 </script>
 
 <template>
-  <div class="col h-full items-center py-4">
+  <div class="col h-full items-center py-4 gap-3">
     <div class="col items-center gap-6">
       <h2>Sélectionner un programme</h2>
       <select v-model="active">
@@ -29,7 +44,15 @@ async function getAll() {
         <h3>{{ exercise.name }}</h3>
       </div>
     </div>
-    <button :disabled="!active._id" theme="primary"><NuxtLink :to="'/session/' + active._id">Démarrer</NuxtLink></button>
+    <button :disabled="!active._id" theme="primary" @click="start">Démarrer</button>
+    <button v-if="unfinishedSession()" theme="primary"><NuxtLink to="/session/resume">Reprendre la dernière session</NuxtLink></button>
+    <Modal v-if="showModal" class="px-10" @close="showModal=false">
+      <h2>Lancer un nouvel exercice supprimera la dernière sessions en cours, confirmer ?</h2>
+      <div class="flex gap-3 justify-center">
+        <button theme="primary" @click="confirm">Oui</button>
+        <button theme="primary" @click="showModal=false">Non</button>
+      </div>
+    </Modal>
   </div>
 </template>
 

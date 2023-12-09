@@ -11,8 +11,8 @@ const time = computed(() => {
 
 <template>
   <div class="text-3xl flex items-center justify-evenly">
-    <span class="border-2 rounded-full p-4 size-2xl leading-4" @click="$emit('time', seconds - 5)">-</span>
-    <span class="text-center text-6xl">{{ time }}</span>
-    <span class="border-2 rounded-full p-4 size-2xl leading-4" @click="$emit('time', seconds + 5)">+</span>
+    <span class="border-2 rounded-full p-4 leading-4" @click="$emit('time', seconds - 5)">-</span>
+    <span class="text-center">{{ time }}</span>
+    <span class="border-2 rounded-full p-4 leading-4" @click="$emit('time', seconds + 5)">+</span>
   </div>
 </template>

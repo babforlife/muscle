@@ -1,54 +1,69 @@
 <script setup lang="ts">
-import { Series, SeriesExercise, Exercise } from '~/models'
+import { ChevronDoubleLeftIcon, ChevronDoubleRightIcon, PlusCircleIcon, MinusCircleIcon } from '@heroicons/vue/24/outline'
+import { Series, SeriesExercise } from '~/models'
 
-const properties = defineProps<{ current: SeriesExercise, remaining: Exercise[]}>()
-const emit = defineEmits(['next-series', 'next-exercise'])
+const properties = defineProps<{ current: SeriesExercise}>()
+const emit = defineEmits(['register', 'next-exercise'])
 
 const series = ref(new Series({ repetitions: 8, weight: 10 }))
-const showDetails = ref(false)
-const rest = ref(0)
+const seriesIndex = ref(0)
 
 onMounted(() => {
-  const lastSeries = properties.current.series[properties.current.series.length - 1]
+  seriesIndex.value = seriesLength.value
+  const lastSeries = properties.current.series[seriesLength.value]
   if (!lastSeries) return
   series.value = new Series({ repetitions: lastSeries?.repetitions, weight: lastSeries?.weight })
 })
 
-function nextSeries() {
-  emit('next-series', new Series(series.value), new Date(Date.now() + rest.value * 1000))
+function previous() {
+  if (!isSeriesActive.value) register()
+  series.value = new Series(properties.current.series[--seriesIndex.value])
+}
+
+function next() {
+  register()
+  series.value = new Series(properties.current.series[++seriesIndex.value])
+}
+
+function register() {
+  emit('register', seriesIndex.value, new Series(series.value))
 }
 
 function nextExercise() {
-  if (properties.current.series.length > 0) nextSeries()
+  register()
   emit('next-exercise')
 }
 
-const nextExerciseDisplay = computed(() => {
-  if (properties.remaining.length === 0) return 'Terminer'
-  return properties.current.series.length === 0 ? 'Passer l\'exercice' : 'Prochain exercice'
-})
+const seriesLength = computed(() => properties.current.series.length)
+const isSeriesActive = computed(() => seriesIndex.value === seriesLength.value)
 </script>
 
 <template>
-  <div class="exercising">
-    <h1 class="text-center">
-      <span>{{ current.exercise.name }}</span>
-      <span @click="showDetails = !showDetails">{{ showDetails ? '˄':'˅' }}</span>
-    </h1>
-    <div v-if="showDetails">
-      <span class="underline">Exercices restants :</span>
-      <div v-for="exercise in remaining" :key="exercise._id">{{ exercise.name }}</div>
+  <div class="h-full col gap-4">
+    <h1 class="text-center py-1">{{ current.exercise.name }}</h1>
+    <h3 class="text-gray-500 pl-4">Série {{ seriesIndex + 1 }} {{ isSeriesActive ? ' · actuel' : '' }}</h3>
+    <div class="flex-1 pl-2">
+      <div class="flex">
+        <h2 class="min-w-[50%] text-left">Répétitions</h2>
+        <div class="flex justify-center gap-4">
+          <MinusCircleIcon class="icon-8" @click="series.repetitions--" />
+          <input v-model="series.repetitions" class="border-2 w-1/3" type="number">
+          <PlusCircleIcon class="icon-8" @click="series.repetitions++" />
+        </div>
+      </div>
+      <div class="flex">
+        <h2 class="min-w-[50%] text-left">Poids</h2>
+        <div class="flex justify-center gap-4">
+          <MinusCircleIcon class="icon-8" @click="series.weight--" />
+          <input v-model="series.weight" class="border-2 w-1/3" type="number">
+          <PlusCircleIcon class="icon-8" @click="series.weight++" />
+        </div>
+      </div>
     </div>
-    <h3 class="text-center">Série : {{ current.series.length + 1 }}</h3>
-    <div class="col">
-      <h2>Répétitions</h2>
-      <input v-model="series.repetitions" class="border-2 h-10 w-1/5 self-center" type="number">
-      <h2>Poids</h2>
-      <input v-model="series.weight" class="border-2 h-10 w-1/5 self-center" type="number">
+    <div class="flex justify-center gap-4">
+      <ChevronDoubleLeftIcon :class="{ invisible: seriesIndex <= 0 }" class="icon-14" @click="previous" />
+      <ChevronDoubleRightIcon class="icon-14" @click="next" />
     </div>
-    <h2>Temps de repos</h2>
-    <Timer :seconds="rest" @time="rest = $event" />
-    <button class="border-2 text-3xl p-2" @click="nextSeries()">Suivant</button>
-    <button class="border-2 text-3xl p-2" @click="nextExercise()">{{ nextExerciseDisplay }}</button>
+    <button theme="primary" :class="{ invisible: !isSeriesActive }" @click="nextExercise">Prochain exercice</button>
   </div>
 </template>

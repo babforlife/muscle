@@ -27,12 +27,11 @@ function add() {
 </script>
 
 <template>
-  <div class="w-full h-full flex items-center flex-col gap-8">
-    <span class="text-2xl">Temps de repos</span>
-    <span class="text-8xl">{{ display }}</span>
+  <div class="h-full col items-center py-4">
+    <span class="text-7xl flex flex-1 items-center">{{ display }}</span>
     <div class="col gap-3">
-      <button class="border-2 p-2" @click="add()">Ajouter 15 secondes</button>
-      <button class="border-2 p-2" @click="$emit('done')">Passer</button>
+      <button theme="primary" class="border-2 p-2" @click="add()">Ajouter 15 secondes</button>
+      <button theme="primary" class="border-2 p-2" @click="$emit('done')">Passer</button>
     </div>
   </div>
 </template>

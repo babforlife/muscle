@@ -1,28 +1,24 @@
 <script setup lang="ts">
-import { emit } from 'shuutils'
+import { emit, on } from 'shuutils'
 import { Header, Series, Session } from '~/models'
 import { programService, activityService } from '~/services'
 
 const session = ref(new Session())
-const rest = ref(new Date())
+const restUntil = ref(new Date())
+const restTime = ref(0)
+const modalState = ref('' as undefined | 'delete' | 'edit' | 'add')
 
-onMounted(async () => {
-  emit('header', new Header({ title: session.value.name, hidden: false }))
-  rest.value = new Date(JSON.parse(localStorage.getItem('rest') as string))
+on('edit', () => modalState.value = 'edit')
 
-  const state = localStorage.getItem('session') as string
-  if (state) return session.value = new Session(JSON.parse(state))
-
-  const route = useRoute()
-  const program = await programService.get(route.params.id).catch(() => { throw new Error('Failed to get program') })
-  session.value = new Session({ remaining: program.exercises, start: new Date(), name: program.name })
-  nextExercise()
+onBeforeMount(async () => {
+  await get()
+  emit('header', new Header({ title: session.value.name, edit: true }))
 })
 
 const state = computed((): 'loading' | 'exercise' | 'resting' | 'finished' => {
   if (!session.value.start) return 'loading'
   if (session.value.finished.length > 0 && session.value.finished.length === session.value.total) return 'finished'
-  if (session.value.active?.exercise._id && rest.value && rest.value.getTime() > Date.now()) return 'resting'
+  if (session.value.active?.exercise._id && restUntil.value && restUntil.value.getTime() > Date.now()) return 'resting'
   return 'exercise'
 })
 
@@ -38,25 +34,38 @@ const progress = computed(() => {
   return `${(doneExercises + doneSeries) / session.value.total * 100}%`
 })
 
+async function get() {
+  restUntil.value = new Date(JSON.parse(localStorage.getItem('restUntil') as string))
+  restTime.value = +(localStorage.getItem('restUntil') ?? 60)
+
+  const state = localStorage.getItem('session') as string
+  if (state) return session.value = new Session(JSON.parse(state))
+
+  const route = useRoute()
+  const program = await programService.get(route.params.id).catch(() => { throw new Error('Failed to get program') })
+  session.value = new Session({ remaining: program.exercises, start: new Date(), name: program.name })
+  nextExercise()
+}
+
 function nextExercise() {
   session.value.next()
   save()
 }
 
-function nextSeries(series: Series, rest: Date) {
-  setRest(rest)
-  session.value.active.series.push(series)
+function register(index: number, series: Series) {
+  if (session.value.active.series.length === index) setRest(new Date(Date.now() + restTime.value * 1000))
+  session.value.active.series[index] = series
   save()
 }
 
 function setRest(setRest: Date) {
-  rest.value = setRest
+  restUntil.value = setRest
   save()
 }
 
 function resetRest() {
-  rest.value = new Date()
-  localStorage.removeItem('rest')
+  restUntil.value = new Date()
+  localStorage.removeItem('restUntil')
 }
 
 function save() {
@@ -66,15 +75,14 @@ function save() {
 
 <template>
   <div class="h-full">
-    <Exercising
-      v-if="state === 'exercise'"
-      :current="session.active"
-      :remaining="session.remaining"
-      @next-series="nextSeries"
-      @next-exercise="nextExercise"
-    />
-    <Rest v-else-if="state === 'resting'" :time="rest" @done="resetRest()" @add="setRest($event)" />
+    <Exercising v-if="state === 'exercise'" :current="session.active" @register="register" @next-exercise="nextExercise" />
+    <Rest v-else-if="state === 'resting'" :time="restUntil" @done="resetRest()" @add="setRest($event)" />
     <span v-else-if="state === 'finished'">Terminé!</span>
     <div :style="{ width: progress}" class="h-5 w-full bg-slate-200 bottom-0 fixed" />
+    <Modal v-if="modalState" class="px-10 modal" child-class="w-full" :state="modalState" @close="modalState=undefined">
+      <template v-if="modalState === 'edit'">
+        <Timer :seconds="restTime" @time="restTime = $event" />
+      </template>
+    </Modal>
   </div>
 </template>
