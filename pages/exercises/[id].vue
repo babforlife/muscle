@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { emit, on } from 'shuutils'
-import { Exercise, SeriesExercise } from '~/models'
+import { Exercise, SeriesExercise, Header } from '~/models'
 import { exerciseService } from '~/services'
 
 const activities = ref([] as SeriesExercise[])
@@ -10,7 +10,7 @@ const showModal = ref('' as undefined | 'delete' | 'edit')
 on('edit', () => showModal.value = 'edit')
 
 onMounted(async () => {
-  emit('header', { title: 'Exercice', navigation: true, edit: true })
+  emit('header', new Header({ title: 'Exercice', navigation: true, edit: true }))
   const route = useRoute()
   const id = route.params.id as string
 

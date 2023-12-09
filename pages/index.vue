@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import { emit, on } from 'shuutils'
-import { Program } from '~/models'
+import { emit } from 'shuutils'
+import { Header, Program } from '~/models'
 import { programService } from '~/services'
 
 const active = ref(new Program())
 const programs = ref([] as Program[])
 
 onMounted(async () => {
-  emit('header', { title: 'Démarrer une session' })
+  emit('header', new Header({ title: 'Démarrer une session' }))
   programs.value = await getAll()
 })
 

@@ -13,7 +13,7 @@ import { PlusCircleIcon, ChartPieIcon, Cog6ToothIcon, ListBulletIcon, BeakerIcon
       <span>Programmes</span>
     </NuxtLink>
     <NuxtLink to="/" class="col items-center">
-      <PlusCircleIcon class="cursor-pointer h-14 w-14 text-red-500 drop-shadow-md" />
+      <PlusCircleIcon class="icon-14 text-red-500" />
     </NuxtLink>
     <NuxtLink active-class="text-indigo-500" to="/activity" class="col items-center">
       <ChartPieIcon class="icon-8 " />

@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import { Series, Session } from '~/models'
+import { emit } from 'shuutils'
+import { Header, Series, Session } from '~/models'
 import { programService, activityService } from '~/services'
 
 const session = ref(new Session())
 const rest = ref(new Date())
 
 onMounted(async () => {
+  emit('header', new Header({ title: session.value.name, hidden: false }))
   rest.value = new Date(JSON.parse(localStorage.getItem('rest') as string))
 
   const state = localStorage.getItem('session') as string

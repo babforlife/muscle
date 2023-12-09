@@ -2,7 +2,7 @@
 import { ChevronUpDownIcon, TrashIcon } from '@heroicons/vue/24/solid'
 import { emit, on } from 'shuutils'
 import draggable from 'vuedraggable'
-import { Exercise, Program } from '~/models'
+import { Exercise, Header, Program } from '~/models'
 import { exerciseService, programService } from '~/services'
 import { romanize } from '~/utils'
 
@@ -16,7 +16,7 @@ const exercisesNotInProgram = ref([] as { _id: string, name: string, checked: bo
 on('edit', () => modalState.value = 'edit')
 
 onMounted(async () => {
-  emit('header', { title: 'Programme', navigation: true, edit: true })
+  emit('header', new Header({ title: 'Programme', navigation: true, edit: true }))
   const route = useRoute()
   program.value = await programService.get(route.params.id).catch(() => { throw new Error('Failed to get program') })
   exercises.value = await exerciseService.getAll().catch(() => { throw new Error('Failed to get exercises') })

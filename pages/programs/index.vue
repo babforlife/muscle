@@ -2,14 +2,14 @@
 import { PlusCircleIcon } from '@heroicons/vue/24/solid'
 import { emit } from 'shuutils'
 import { programService } from '~/services'
-import { Program } from '~/models'
+import { Header, Program } from '~/models'
 
 const programs = ref([] as Program[])
 const newProgram = ref(new Program())
 const showModal = ref(false)
 
 onMounted(async () => {
-  emit('header', { title: 'Programmes', search: true })
+  emit('header', new Header({ title: 'Programmes', search: true }))
   await get()
 })
 

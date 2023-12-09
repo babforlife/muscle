@@ -1,19 +1,15 @@
 <script setup lang="ts">
 import { on } from 'shuutils'
+import { Header } from '~/models/header.model'
 
-const header = reactive({ navigation: false, search: false, title: '', edit: false })
+const header = ref(new Header())
 
-on('header', (data: {navigation: boolean, search: boolean, title: string, edit: boolean}) => {
-  header.navigation = data.navigation
-  header.search = data.search
-  header.title = data.title
-  header.edit = data.edit
-})
+on('header', (data: Header) => header.value = data)
 </script>
 
 <template>
   <div class="h-full col bg-indigo-50">
-    <MuscleHeader :navigation="header.navigation" :search="header.search" :title="header.title" :edit="header.edit" />
+    <MuscleHeader v-if="!header.hidden" :navigation="header.navigation" :search="header.search" :title="header.title" :edit="header.edit" />
     <div class="flex-1 overflow-auto">
       <slot />
     </div>
