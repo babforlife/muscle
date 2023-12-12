@@ -10,7 +10,7 @@ export default defineNuxtConfig({
   },
   plugins: ['~/plugins/directives.js', '~/plugins/msw.js', '~/plugins/highcharts.js'],
   modules: ['@nuxtjs/tailwindcss'],
-  ssr: true,
+  ssr: false,
   css: ['normalize.css/normalize.css', '@/assets/styles/main.css'],
   runtimeConfig: {
     public: {
