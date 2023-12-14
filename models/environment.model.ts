@@ -1,6 +1,6 @@
 export class Environment {
   production = true
-  apiUrl = 'api-url'
+  apiUrl = 'https://muscle-api.onrender.com'
 
   constructor(data: Partial<Environment>) {
     Object.assign(this, data)
