@@ -5,9 +5,6 @@
 > Tracks musculation activities and renders statisitcs and diagrams
 > Works with [Muscle API](https://github.com/babforlife/muscle-api) to get and update the data
 
-## 🏗️ Usage
-
-
 ## 🙏 Thanks
 
 - [Eslint](https://github.com/eslint/eslint) : super tool to find & fix problems
