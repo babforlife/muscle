@@ -9,3 +9,12 @@
 
 
 ## 🙏 Thanks
+
+[Eslint](https://github.com/eslint/eslint) : super tool to find & fix problems
+[Hero icons](https://github.com/tailwindlabs/heroicons) : nice looking svg icons
+[Highcharts](https://github.com/highcharts/highcharts) : a tool to generate charts easily
+[Netlify](https://www.netlify.com/) : awesome company that offers hosting for OSS
+[Nuxt](https://github.com/nuxt/nuxt) : a great front framework base on Vue.js
+[Shuutils](https://github.com/Shuunen/shuutils) : collection of pure JS utils
+[TailwindCss](https://github.com/tailwindlabs/tailwindcss) : awesome lib to produce maintainable style
+[Vite](https://github.com/vitejs/vite) : super fast frontend tooling
