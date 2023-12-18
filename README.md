@@ -8,6 +8,7 @@
 
 ## Todo
 
+- [ ] add authentication and and account management
 - [ ] add exercises statistics
 - [ ] rework activities statistics
 - [ ] add a fuzzy search in the header
