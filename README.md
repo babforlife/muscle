@@ -14,7 +14,7 @@ Hosting graciously provided by [Netlify](https://www.netlify.com)
 
 ## 📝 Todo
 - [ ] add CSS for a desktop usage
-- [ ] add authentication and account management
+- [ ] add authentication and account management, and also a no-account access
 - [ ] add exercises and activities statistics
 - [ ] add a fuzzy search in the header
 - [ ] when in a program :
