@@ -74,7 +74,7 @@ const progress = computed(() => {
 
 watchEffect(() => {
   if (state.value !== 'finished') return
-  activityService.save(session.value)
+  activityService.saveWithSession(session.value)
   localStorage.removeItem('session')
   localStorage.removeItem('restTime')
 })

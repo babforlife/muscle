@@ -50,7 +50,7 @@ async function save() {
 }
 
 async function remove() {
-  await programService.delete(program.value).then(async () => await navigateTo('/programs')).catch(() => console.log('Catch error'))
+  await programService.remove(program.value._id).then(async () => await navigateTo('/programs')).catch(() => console.log('Catch error'))
 }
 </script>
 

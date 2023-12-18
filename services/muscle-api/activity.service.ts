@@ -2,30 +2,12 @@ import { BaseService } from './base.service'
 import { Activity, Session } from '~/models'
 import { environment } from '~/environments'
 
-class ActivityService extends BaseService {
+class ActivityService extends BaseService<Activity> {
   url = environment.apiUrl + '/activity'
 
-  public async getAll(): Promise<Activity[]> {
-    const response = await fetch(`${this.url}`, { method: 'GET' })
-    const data = await this.manageResponse(response)
-    return data.map((activity: any) => new Activity(activity))
-  }
-
-  public async get(id: string): Promise<Activity> {
-    const response = await fetch(`${this.url}/${id}`, { method: 'GET' })
-    const data = await this.manageResponse(response)
-    return new Activity(data)
-  }
-
-  public async save(session: Session) {
+  public async saveWithSession(session: Session) {
     const activity = new Activity({ start: session.start, session: session.finished, end: new Date(), name: session.name })
-    const response = await fetch(`${this.url}`, { method: 'POST', body: JSON.stringify(activity) })
-    return await this.manageResponse(response)
-  }
-
-  public async remove(id: string) {
-    const response = await fetch(`${this.url}/${id}`, { method: 'DELETE' })
-    return await this.manageResponse(response)
+    return await this.save(activity)
   }
 }
-export const activityService = new ActivityService()
+export const activityService = new ActivityService(Activity)

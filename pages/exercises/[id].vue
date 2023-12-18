@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { emit, on } from 'shuutils'
 import { Exercise, SeriesExercise, Header } from '~/models'
-import { exerciseService } from '~/services'
+import { exerciseService, seriesExerciseService } from '~/services'
 
 const activities = ref([] as SeriesExercise[])
 const exercise = ref(new Exercise())
@@ -16,7 +16,7 @@ onMounted(async () => {
 
   exercise.value = await exerciseService.get(id).catch(() => { throw new Error('Failed to get exercise') })
   newName.value = exercise.value.name
-  activities.value = await exerciseService.getActivities(exercise.value._id)
+  activities.value = await seriesExerciseService.getFromExercise(exercise.value._id)
 })
 
 async function save() {
@@ -26,7 +26,7 @@ async function save() {
 }
 
 async function remove() {
-  await exerciseService.delete(exercise.value).then(async () => await navigateTo('/exercises')).catch(() => console.log('Catch error'))
+  await exerciseService.remove(exercise.value._id).then(async () => await navigateTo('/exercises')).catch(() => console.log('Catch error'))
 }
 </script>
 
