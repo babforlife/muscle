@@ -6,20 +6,22 @@
 > Tracks musculation activities and renders statisitcs and diagrams
 > Works with [Muscle API](https://github.com/babforlife/muscle-api) to get and update the data
 
-## Todo
+## 🎬 Demo
 
-- [ ] add authentication and and account management
-- [ ] add exercises statistics
-- [ ] rework activities statistics
+[Try it out](https://muscle-webapp.netlify.app)
+
+Hosting graciously provided by [Netlify](https://www.netlify.com)
+
+## 📝 Todo
+- [ ] add CSS for a desktop usage
+- [ ] add authentication and account management
+- [ ] add exercises and activities statistics
 - [ ] add a fuzzy search in the header
-- [ ] when in a program, add data on the current exercise from previous sessions
-- [ ] when in a program, autocomplete weight and repetition inputs from previous sessions
-- [ ] when in a program, add a ring just before the countdown ends
-- [ ] when in a program, add a vocal command
-  - [ ] next series
-  - [ ] next exercise
-  - [ ] add time to the countdown
-  - [ ] reset the countdown
+- [ ] when in a program :
+  - [ ] add data on the current exercise from previous sessions
+  - [ ] autocomplete weight and repetition inputs from previous sessions
+  - [ ] add a ring just before the countdown ends
+  - [ ] add vocal commands (next series, next exercise, add time to the countdown, reset the countdown)
 
 ## 🙏 Thanks
 
