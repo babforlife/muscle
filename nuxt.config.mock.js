@@ -8,7 +8,7 @@ export default defineNuxtConfig({
   typescript: {
     shim: false
   },
-  plugins: ['~/plugins/directives.js', '~/plugins/highcharts.client.js'],
-  modules: ['@nuxtjs/tailwindcss'],
+  plugins: ['~/plugins/directives.js', '~/plugins/mock/msw.js', '~/plugins/highcharts.js'],
+  modules: ['nuxt-security', '@nuxtjs/tailwindcss'],
   css: ['normalize.css/normalize.css', '@/assets/styles/main.css']
 })
