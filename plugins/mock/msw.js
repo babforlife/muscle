@@ -4,8 +4,6 @@ import { programs, exercises, pectoraux, activities, pecsAct, dosAct, epaulesAct
 import { exerciseService, programService, activityService } from '~/services'
 
 export default defineNuxtPlugin(() => {
-  const config = useRuntimeConfig()
-  if (process.env.NODE_ENV !== 'development' || !config.public.mock) return
   return setupWorker(...programsHandlers, ...exercisesHandlers, ...activitiesHandlers).start({
     onUnhandledRequest(request, print) {
       const excludedRequests = ['/favicon.ico', '/_nuxt/']

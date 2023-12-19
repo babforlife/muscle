@@ -41,7 +41,7 @@
     "lint": "run-s lint:*",
     "lint:css": "stylelint \"{assets,components,layouts,pages}/**/*.{css,vue}\" --fix",
     "lint:js": "eslint --fix --ignore-path .gitignore --ext \".js,.vue\" .",
-    "mock": "npx msw init public && NUXT_PUBLIC_MOCK=true nuxt dev",
+    "mock": "npx msw init public && nuxt dev --config-file nuxt.config.dev.js",
     "postinstall": "nuxt prepare",
     "preview": "nuxt preview"
   },

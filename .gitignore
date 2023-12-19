@@ -4,6 +4,7 @@
 .node_repl_history
 .npm
 .nuxt
+.output
 .nyc_output
 *.log
 *.pid
