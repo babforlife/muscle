@@ -2,6 +2,7 @@
 import { emit } from 'shuutils'
 import { Header, Program } from '~/models'
 import { programService } from '~/services'
+import { localStorageService } from '~/services/local-storage-service.service'
 
 const active = ref(new Program())
 const programs = ref([] as Program[])
@@ -22,12 +23,12 @@ async function start() {
 }
 
 async function confirm() {
-  localStorage.removeItem('session')
+  localStorageService.removeItem('session')
   await navigateTo(`/session/${active.value._id}`)
 }
 
 function unfinishedSession() {
-  return !!localStorage.getItem('session')
+  return !!localStorageService.getItem('session')
 }
 </script>
 
