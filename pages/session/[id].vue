@@ -2,6 +2,7 @@
 import { emit, on } from 'shuutils'
 import { Header, Series, Session } from '~/models'
 import { programService, activityService } from '~/services'
+import { localStorageService } from '~/services/local-storage-service.service'
 
 const session = ref(new Session())
 const restUntil = ref(new Date())
@@ -16,10 +17,10 @@ onBeforeMount(async () => {
 })
 
 async function load() {
-  restUntil.value = new Date(JSON.parse(localStorage.getItem('restUntil') as string))
-  restTime.value = +(localStorage.getItem('restTime') ?? 90)
+  restUntil.value = new Date(JSON.parse(localStorageService.getItem('restUntil') as string))
+  restTime.value = +(localStorageService.getItem('restTime') ?? 90)
 
-  const state = localStorage.getItem('session') as string
+  const state = localStorageService.getItem('session') as string
   if (state) return session.value = new Session(JSON.parse(state))
 
   const route = useRoute()
@@ -40,23 +41,23 @@ function register(index: number, series: Series) {
 }
 
 function setRest(setRest: Date) {
-  localStorage.setItem('restUntil', JSON.stringify(setRest))
+  localStorageService.setItem('restUntil', JSON.stringify(setRest))
   restUntil.value = setRest
   save()
 }
 
 function resetRest() {
   restUntil.value = new Date()
-  localStorage.removeItem('restUntil')
+  localStorageService.removeItem('restUntil')
 }
 
 function saveRestTime() {
-  localStorage.setItem('restTime', String(restTime.value))
+  localStorageService.setItem('restTime', String(restTime.value))
   modalState.value = false
 }
 
 function save() {
-  localStorage.setItem('session', JSON.stringify(session.value))
+  localStorageService.setItem('session', JSON.stringify(session.value))
 }
 
 const state = computed((): 'loading' | 'exercise' | 'resting' | 'finished' => {
@@ -75,8 +76,8 @@ const progress = computed(() => {
 watchEffect(() => {
   if (state.value !== 'finished') return
   activityService.saveWithSession(session.value)
-  localStorage.removeItem('session')
-  localStorage.removeItem('restTime')
+  localStorageService.removeItem('session')
+  localStorageService.removeItem('restTime')
 })
 
 </script>
