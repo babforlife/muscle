@@ -21,12 +21,12 @@ onMounted(async () => {
 
 async function save() {
   exercise.value.name = newName.value
-  await exerciseService.save(exercise.value).catch(error => console.log('catch error,', error))
+  await exerciseService.post(exercise.value).catch(error => console.log('catch error,', error))
   showModal.value = undefined
 }
 
 async function remove() {
-  await exerciseService.remove(exercise.value._id).then(async () => await navigateTo('/exercises')).catch(() => console.log('Catch error'))
+  await exerciseService.delete(exercise.value._id).then(async () => await navigateTo('/exercises')).catch(() => console.log('Catch error'))
 }
 </script>
 

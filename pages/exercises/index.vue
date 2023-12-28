@@ -18,7 +18,7 @@ async function get() {
 }
 
 async function save() {
-  await exerciseService.save(newExercise.value).then(() => get()).catch(() => console.log('Failed to save exercise'))
+  await exerciseService.post(newExercise.value).then(() => get()).catch(() => console.log('Failed to save exercise'))
   showModal.value = false
 }
 </script>

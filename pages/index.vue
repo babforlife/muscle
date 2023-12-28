@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { emit } from 'shuutils'
 import { Header, Program } from '~/models'
-import { programService } from '~/services'
-import { localStorageService } from '~/services/local-storage-service.service'
+import { programService, localStorageService } from '~/services'
 
 const active = ref(new Program())
 const programs = ref([] as Program[])
