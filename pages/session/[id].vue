@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { emit, on } from 'shuutils'
 import { Header, Series, Session } from '~/models'
-import { programService, activityService } from '~/services'
-import { localStorageService } from '~/services/local-storage-service.service'
+import { programService, activityService, localStorageService } from '~/services'
 
 const session = ref(new Session())
 const restUntil = ref(new Date())

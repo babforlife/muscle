@@ -7,7 +7,7 @@ class ActivityService extends BaseService<Activity> {
 
   public async saveWithSession(session: Session) {
     const activity = new Activity({ start: session.start, session: session.finished, end: new Date(), name: session.name })
-    return await this.save(activity)
+    return await this.post(activity)
   }
 }
 export const activityService = new ActivityService(Activity)

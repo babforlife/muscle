@@ -34,7 +34,7 @@ function setExercisesNotInProgram() {
 
 async function addExercises() {
   program.value.exercises.push(...exercisesChecked.value)
-  await programService.save(program.value).catch(error => console.log('catch error,', error))
+  await programService.post(program.value).catch(error => console.log('catch error,', error))
   modalState.value = undefined
   setExercisesNotInProgram()
 }
@@ -45,12 +45,12 @@ function removeExercise(exercise: Exercise) {
 
 async function save() {
   program.value.name = updateName.value
-  await programService.save(program.value).catch(error => console.log('catch error,', error))
+  await programService.post(program.value).catch(error => console.log('catch error,', error))
   modalState.value = undefined
 }
 
 async function remove() {
-  await programService.remove(program.value._id).then(async () => await navigateTo('/programs')).catch(() => console.log('Catch error'))
+  await programService.delete(program.value._id).then(async () => await navigateTo('/programs')).catch(() => console.log('Catch error'))
 }
 </script>
 

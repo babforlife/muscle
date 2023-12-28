@@ -13,7 +13,7 @@ onMounted(async () => {
 })
 
 async function remove() {
-  await activityService.remove(activity.value._id).catch(() => { throw new Error('Failed to remove activity') })
+  await activityService.delete(activity.value._id).catch(() => { throw new Error('Failed to remove activity') })
   await navigateTo('/activity')
 }
 </script>
