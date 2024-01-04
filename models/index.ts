@@ -1,3 +1,4 @@
+export * from './authentication.model'
 export * from './activity.model'
 export * from './environment.model'
 export * from './exercise.model'
