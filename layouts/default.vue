@@ -9,10 +9,10 @@ on('header', (data: Header) => header.value = data)
 
 <template>
   <div class="h-full col bg-indigo-50">
-    <MuscleHeader v-if="!header.hidden" :navigation="header.navigation" :search="header.search" :title="header.title" :edit="header.edit" />
+    <m-header v-if="!header.hidden" :navigation="header.navigation" :search="header.search" :title="header.title" :edit="header.edit" />
     <div class="flex-1 overflow-auto">
       <slot />
     </div>
-    <MuscleFooter class="border-t-2 border-indigo-100 w-full rounded-t-3xl bg-white py-1" />
+    <m-footer class="border-t-2 border-indigo-100 w-full rounded-t-3xl bg-white py-1" />
   </div>
 </template>
