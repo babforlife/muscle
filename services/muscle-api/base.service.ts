@@ -1,6 +1,5 @@
-import { localStorageService } from '../local-storage-service.service'
 import { authenticationService } from './authentication.service'
-
+import { localStorageService } from '~/services'
 interface ApiService<T> {
   url: string
   getAll(): Promise<T[]>

@@ -6,22 +6,28 @@ definePageMeta({ layout: false })
 const router = useRouter()
 
 const email = ref('')
-const password = ref('')
 const error = ref('')
+const loading = ref(false)
+const password = ref('')
+const showModal = ref(false)
 
 async function login() {
+  loading.value = true
+  setTimeout(() => showModal.value = true, 1000)
+
   await authenticationService.login(email.value, password.value)
     .then(() => router.push('/'))
     .catch(error_ => error.value = error_.message)
+    .finally(() => { loading.value = false; showModal.value = false })
 }
 </script>
 
 <template>
-  <AuthenticationLayout>
+  <AuthenticationLayout :show-modal="showModal && loading">
     <form class="col gap-4" @submit.prevent="login">
       <input v-model="email" placeholder="Email" type="email" autocomplete="email">
       <input v-model="password" placeholder="Password" type="password" autocomplete="current-password">
-      <button theme="primary" type="submit">Login</button>
+      <m-button :loading="loading" theme="primary" type="submit">Se connecter</m-button>
       <span class="text-lg text-red-400">{{ error }}</span>
     </form>
     <template #footer>

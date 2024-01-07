@@ -6,24 +6,30 @@ definePageMeta({ layout: false })
 const router = useRouter()
 
 const email = ref('')
+const error = ref('')
+const loading = ref(false)
 const password = ref('')
 const repeatPassword = ref('')
-const error = ref('')
+const showModal = ref(false)
 
 async function register() {
+  loading.value = true
+  setTimeout(() => showModal.value = true, 2000)
+
   await authenticationService.register(email.value, password.value, repeatPassword.value)
     .then(() => router.push('/'))
     .catch(error_ => error.value = error_.message)
+    .finally(() => { loading.value = false; showModal.value = false })
 }
 </script>
 
 <template>
-  <AuthenticationLayout>
+  <AuthenticationLayout :show-modal="showModal && loading">
     <form class="col gap-4" @submit.prevent="register">
       <input v-model="email" placeholder="Email" type="email" autocomplete="email">
-      <input v-model="password" placeholder="Password" type="password" autocomplete="current-password">
+      <input v-model="password" placeholder="Password" type="password" autocomplete="new-password">
       <input v-model="repeatPassword" placeholder="Repeat Password" type="password" autocomplete="new-password">
-      <button theme="primary" type="submit">S'inscrire</button>
+      <m-button :loading="loading" theme="primary" type="submit">S'inscrire</m-button>
       <span class="text-lg text-red-400">{{ error }}</span>
     </form>
     <template #footer>

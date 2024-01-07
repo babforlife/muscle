@@ -3,11 +3,18 @@ button {
 }
 
 button[theme='primary'] {
-  @apply bg-indigo-400 text-indigo-50 border-indigo-400;
+  @apply bg-indigo-400 text-indigo-50 border-gray-200;
+}
+
+button[theme='primary'][loading='true'] {
+  background-size: 300%;
+  background-position: 0;
+  animation: both loading 4s infinite;
+  background-image: linear-gradient(to right, rgb(129 140 248) 40%, rgb(55 48 163) 60%);
 }
 
 button[theme='primary']:disabled {
-  @apply bg-indigo-200 text-white border-indigo-200;
+  @apply bg-indigo-300 text-white;
 }
 
 button[theme='danger'] {
@@ -20,4 +27,10 @@ a:active, button:active {
 
 a:active:disabled, button:active:disabled {
   transform: none;
+}
+
+@keyframes loading {
+  0% { background-position: 0; }
+  50% { background-position: 100%; }
+  100% { background-position: 0; }
 }
