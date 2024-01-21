@@ -15,7 +15,7 @@
     "eslint-config-prettier": "^8.10.0",
     "eslint-plugin-nuxt": "^4.0.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-unicorn": "^45.0.2",
+    "eslint-plugin-unicorn": "^50.0.0",
     "eslint-plugin-vue": "^9.18.1",
     "msw": "^2.0.7",
     "normalize.css": "^8.0.1",
