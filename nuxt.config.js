@@ -9,6 +9,6 @@ export default defineNuxtConfig({
     shim: false
   },
   plugins: ['~/plugins/directives.js', '~/plugins/highcharts.client.js'],
-  modules: ['nuxt-security', '@nuxtjs/tailwindcss'],
+  modules: ['@nuxtjs/tailwindcss'],
   css: ['normalize.css/normalize.css', '@/assets/styles/main.css']
 })
