@@ -2,6 +2,7 @@
 [![Netlify](https://img.shields.io/netlify/7ff4783c-a280-492e-80a3-24823ef13ca2)](https://muscle-webapp.netlify.app)
 [![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/babforlife/muscle)](https://codeclimate.com/github/babforlife/muscle)
 [![Mozilla HTTP Observatory Grade](https://img.shields.io/mozilla-observatory/grade/muscle-webapp.netlify.app)](https://observatory.mozilla.org/analyze/muscle-webapp.netlify.app)
+[![Libraries.io](https://img.shields.io/librariesio/github/babforlife/muscle.svg)](https://libraries.io/github/babforlife/muscle)
 
 # Muscle
 ![1702640102555_](https://github.com/babforlife/muscle-api/assets/55501953/ad0fa98a-d304-4b6d-98d5-259c5b672426)
