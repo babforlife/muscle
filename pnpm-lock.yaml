@@ -57,7 +57,7 @@ devDependencies:
     version: 8.0.1
   nuxt:
     specifier: ^3.8.1
-    version: 3.8.1(eslint@8.53.0)(stylelint@14.16.1)(typescript@5.3.3)(vite@4.5.0)
+    version: 3.8.1(eslint@8.53.0)(stylelint@14.16.1)(typescript@5.3.3)(vite@5.0.12)
   nuxt-security:
     specifier: ^1.0.0
     version: 1.0.0
@@ -74,8 +74,8 @@ devDependencies:
     specifier: '5.3'
     version: 5.3.3
   vite:
-    specifier: '4'
-    version: 4.5.0
+    specifier: '5'
+    version: 5.0.12
   vuedraggable:
     specifier: ^4.1.0
     version: 4.1.0(vue@3.3.8)
@@ -1196,7 +1196,7 @@ packages:
     resolution: {integrity: sha512-GBzP8zOc7CGWyFQS6dv1lQz8VVpz5C2yRszbXufwG/9zhStTIH50EtD87NmWbTMwXDvZLNg8GIpb1UFdH93JCA==}
     dev: true
 
-  /@nuxt/devtools-kit@1.0.1(nuxt@3.8.1)(vite@4.5.0):
+  /@nuxt/devtools-kit@1.0.1(nuxt@3.8.1)(vite@5.0.12):
     resolution: {integrity: sha512-tR+9mqic2O76LWkmdH0q5xPEnrOo8DmHvKyXA99be7NQfkjf47roWfa+gvQbksqwNw3SZVw2fq9Lotk4vZj4RA==}
     peerDependencies:
       nuxt: ^3.7.4
@@ -1205,8 +1205,8 @@ packages:
       '@nuxt/kit': 3.8.1
       '@nuxt/schema': 3.8.1
       execa: 7.2.0
-      nuxt: 3.8.1(eslint@8.53.0)(stylelint@14.16.1)(typescript@5.3.3)(vite@4.5.0)
-      vite: 4.5.0
+      nuxt: 3.8.1(eslint@8.53.0)(stylelint@14.16.1)(typescript@5.3.3)(vite@5.0.12)
+      vite: 5.0.12
     transitivePeerDependencies:
       - rollup
       - supports-color
@@ -1228,7 +1228,7 @@ packages:
       semver: 7.5.4
     dev: true
 
-  /@nuxt/devtools@1.0.1(nuxt@3.8.1)(vite@4.5.0):
+  /@nuxt/devtools@1.0.1(nuxt@3.8.1)(vite@5.0.12):
     resolution: {integrity: sha512-VwuX4g0QmKBE3GyDqVkLIt3xOz/aTFZbD1SxyT/ani4FfOAec2ksjbF4CQmGonfjL2lN1glvoew83zj4P5vi/g==}
     hasBin: true
     peerDependencies:
@@ -1236,7 +1236,7 @@ packages:
       vite: '*'
     dependencies:
       '@antfu/utils': 0.7.6
-      '@nuxt/devtools-kit': 1.0.1(nuxt@3.8.1)(vite@4.5.0)
+      '@nuxt/devtools-kit': 1.0.1(nuxt@3.8.1)(vite@5.0.12)
       '@nuxt/devtools-wizard': 1.0.1
       '@nuxt/kit': 3.8.1
       birpc: 0.2.14
@@ -1255,7 +1255,7 @@ packages:
       local-pkg: 0.5.0
       magicast: 0.3.1
       nitropack: 2.7.2
-      nuxt: 3.8.1(eslint@8.53.0)(stylelint@14.16.1)(typescript@5.3.3)(vite@4.5.0)
+      nuxt: 3.8.1(eslint@8.53.0)(stylelint@14.16.1)(typescript@5.3.3)(vite@5.0.12)
       nypm: 0.3.3
       ofetch: 1.3.3
       ohash: 1.1.3
@@ -1269,9 +1269,9 @@ packages:
       simple-git: 3.20.0
       sirv: 2.0.3
       unimport: 3.5.0(rollup@3.29.4)
-      vite: 4.5.0
-      vite-plugin-inspect: 0.7.42(@nuxt/kit@3.8.1)(vite@4.5.0)
-      vite-plugin-vue-inspector: 4.0.0(vite@4.5.0)
+      vite: 5.0.12
+      vite-plugin-inspect: 0.7.42(@nuxt/kit@3.8.1)(vite@5.0.12)
+      vite-plugin-vue-inspector: 4.0.0(vite@5.0.12)
       which: 3.0.1
       ws: 8.14.2
     transitivePeerDependencies:
@@ -1873,6 +1873,110 @@ packages:
       picomatch: 2.3.1
       rollup: 3.29.4
     dev: true
+
+  /@rollup/rollup-android-arm-eabi@4.9.6:
+    resolution: {integrity: sha512-MVNXSSYN6QXOulbHpLMKYi60ppyO13W9my1qogeiAqtjb2yR4LSmfU2+POvDkLzhjYLXz9Rf9+9a3zFHW1Lecg==}
+    cpu: [arm]
+    os: [android]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@rollup/rollup-android-arm64@4.9.6:
+    resolution: {integrity: sha512-T14aNLpqJ5wzKNf5jEDpv5zgyIqcpn1MlwCrUXLrwoADr2RkWA0vOWP4XxbO9aiO3dvMCQICZdKeDrFl7UMClw==}
+    cpu: [arm64]
+    os: [android]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@rollup/rollup-darwin-arm64@4.9.6:
+    resolution: {integrity: sha512-CqNNAyhRkTbo8VVZ5R85X73H3R5NX9ONnKbXuHisGWC0qRbTTxnF1U4V9NafzJbgGM0sHZpdO83pLPzq8uOZFw==}
+    cpu: [arm64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@rollup/rollup-darwin-x64@4.9.6:
+    resolution: {integrity: sha512-zRDtdJuRvA1dc9Mp6BWYqAsU5oeLixdfUvkTHuiYOHwqYuQ4YgSmi6+/lPvSsqc/I0Omw3DdICx4Tfacdzmhog==}
+    cpu: [x64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@rollup/rollup-linux-arm-gnueabihf@4.9.6:
+    resolution: {integrity: sha512-oNk8YXDDnNyG4qlNb6is1ojTOGL/tRhbbKeE/YuccItzerEZT68Z9gHrY3ROh7axDc974+zYAPxK5SH0j/G+QQ==}
+    cpu: [arm]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@rollup/rollup-linux-arm64-gnu@4.9.6:
+    resolution: {integrity: sha512-Z3O60yxPtuCYobrtzjo0wlmvDdx2qZfeAWTyfOjEDqd08kthDKexLpV97KfAeUXPosENKd8uyJMRDfFMxcYkDQ==}
+    cpu: [arm64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@rollup/rollup-linux-arm64-musl@4.9.6:
+    resolution: {integrity: sha512-gpiG0qQJNdYEVad+1iAsGAbgAnZ8j07FapmnIAQgODKcOTjLEWM9sRb+MbQyVsYCnA0Im6M6QIq6ax7liws6eQ==}
+    cpu: [arm64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@rollup/rollup-linux-riscv64-gnu@4.9.6:
+    resolution: {integrity: sha512-+uCOcvVmFUYvVDr27aiyun9WgZk0tXe7ThuzoUTAukZJOwS5MrGbmSlNOhx1j80GdpqbOty05XqSl5w4dQvcOA==}
+    cpu: [riscv64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@rollup/rollup-linux-x64-gnu@4.9.6:
+    resolution: {integrity: sha512-HUNqM32dGzfBKuaDUBqFB7tP6VMN74eLZ33Q9Y1TBqRDn+qDonkAUyKWwF9BR9unV7QUzffLnz9GrnKvMqC/fw==}
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@rollup/rollup-linux-x64-musl@4.9.6:
+    resolution: {integrity: sha512-ch7M+9Tr5R4FK40FHQk8VnML0Szi2KRujUgHXd/HjuH9ifH72GUmw6lStZBo3c3GB82vHa0ZoUfjfcM7JiiMrQ==}
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@rollup/rollup-win32-arm64-msvc@4.9.6:
+    resolution: {integrity: sha512-VD6qnR99dhmTQ1mJhIzXsRcTBvTjbfbGGwKAHcu+52cVl15AC/kplkhxzW/uT0Xl62Y/meBKDZvoJSJN+vTeGA==}
+    cpu: [arm64]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@rollup/rollup-win32-ia32-msvc@4.9.6:
+    resolution: {integrity: sha512-J9AFDq/xiRI58eR2NIDfyVmTYGyIZmRcvcAoJ48oDld/NTR8wyiPUu2X/v1navJ+N/FGg68LEbX3Ejd6l8B7MQ==}
+    cpu: [ia32]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@rollup/rollup-win32-x64-msvc@4.9.6:
+    resolution: {integrity: sha512-jqzNLhNDvIZOrt69Ce4UjGRpXJBzhUBzawMwnaDAwyHriki3XollsewxWzOzz+4yOFDkuJHtTsZFwMxhYJWmLQ==}
+    cpu: [x64]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
 
   /@sigstore/bundle@2.1.0:
     resolution: {integrity: sha512-89uOo6yh/oxaU8AeOUnVrTdVMcGk9Q1hJa7Hkvalc6G3Z3CupWk4Xe9djSgJm9fMkH69s0P0cVHUoKSOemLdng==}
@@ -6880,7 +6984,7 @@ packages:
       - supports-color
     dev: true
 
-  /nuxt@3.8.1(eslint@8.53.0)(stylelint@14.16.1)(typescript@5.3.3)(vite@4.5.0):
+  /nuxt@3.8.1(eslint@8.53.0)(stylelint@14.16.1)(typescript@5.3.3)(vite@5.0.12):
     resolution: {integrity: sha512-RSGO56Gv0x2f6AXWw4o4GoBaVdsD0qkPCjrX7Ud/jzH3cRJoyYMPuq/9AOLvf2o1ecZWl39j5elqJ4QHmggyOA==}
     engines: {node: ^14.18.0 || >=16.10.0}
     hasBin: true
@@ -6894,7 +6998,7 @@ packages:
         optional: true
     dependencies:
       '@nuxt/devalue': 2.0.2
-      '@nuxt/devtools': 1.0.1(nuxt@3.8.1)(vite@4.5.0)
+      '@nuxt/devtools': 1.0.1(nuxt@3.8.1)(vite@5.0.12)
       '@nuxt/kit': 3.8.1
       '@nuxt/schema': 3.8.1
       '@nuxt/telemetry': 2.5.2
@@ -7869,6 +7973,15 @@ packages:
       picocolors: 1.0.0
       source-map-js: 1.0.2
 
+  /postcss@8.4.33:
+    resolution: {integrity: sha512-Kkpbhhdjw2qQs2O2DGX+8m5OVqEcbB9HRBvuYM9pgrjEFUg30A9LmXNlTAUj4S9kgtGyrMbTzVjH7E+s5Re2yg==}
+    engines: {node: ^10 || ^12 || >=14}
+    dependencies:
+      nanoid: 3.3.7
+      picocolors: 1.0.0
+      source-map-js: 1.0.2
+    dev: true
+
   /prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
@@ -8192,6 +8305,29 @@ packages:
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     hasBin: true
     optionalDependencies:
+      fsevents: 2.3.3
+    dev: true
+
+  /rollup@4.9.6:
+    resolution: {integrity: sha512-05lzkCS2uASX0CiLFybYfVkwNbKZG5NFQ6Go0VWyogFTXXbR039UVsegViTntkk4OglHBdF54ccApXRRuXRbsg==}
+    engines: {node: '>=18.0.0', npm: '>=8.0.0'}
+    hasBin: true
+    dependencies:
+      '@types/estree': 1.0.5
+    optionalDependencies:
+      '@rollup/rollup-android-arm-eabi': 4.9.6
+      '@rollup/rollup-android-arm64': 4.9.6
+      '@rollup/rollup-darwin-arm64': 4.9.6
+      '@rollup/rollup-darwin-x64': 4.9.6
+      '@rollup/rollup-linux-arm-gnueabihf': 4.9.6
+      '@rollup/rollup-linux-arm64-gnu': 4.9.6
+      '@rollup/rollup-linux-arm64-musl': 4.9.6
+      '@rollup/rollup-linux-riscv64-gnu': 4.9.6
+      '@rollup/rollup-linux-x64-gnu': 4.9.6
+      '@rollup/rollup-linux-x64-musl': 4.9.6
+      '@rollup/rollup-win32-arm64-msvc': 4.9.6
+      '@rollup/rollup-win32-ia32-msvc': 4.9.6
+      '@rollup/rollup-win32-x64-msvc': 4.9.6
       fsevents: 2.3.3
     dev: true
 
@@ -9529,7 +9665,7 @@ packages:
       vscode-uri: 3.0.8
     dev: true
 
-  /vite-plugin-inspect@0.7.42(@nuxt/kit@3.8.1)(vite@4.5.0):
+  /vite-plugin-inspect@0.7.42(@nuxt/kit@3.8.1)(vite@5.0.12):
     resolution: {integrity: sha512-JCyX86wr3siQc+p9Kd0t8VkFHAJag0RaQVIpdFGSv5FEaePEVB6+V/RGtz2dQkkGSXQzRWrPs4cU3dRKg32bXw==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -9548,13 +9684,13 @@ packages:
       open: 9.1.0
       picocolors: 1.0.0
       sirv: 2.0.3
-      vite: 4.5.0
+      vite: 5.0.12
     transitivePeerDependencies:
       - rollup
       - supports-color
     dev: true
 
-  /vite-plugin-vue-inspector@4.0.0(vite@4.5.0):
+  /vite-plugin-vue-inspector@4.0.0(vite@5.0.12):
     resolution: {integrity: sha512-xNjMbRj3YrebuuInTvlC8ghPtzT+3LjMIQPeeR/5CaFd+WcbA9wBnECZmlcP3GITCVED0SxGmTyoJ3iVKsK4vQ==}
     peerDependencies:
       vite: ^3.0.0-0 || ^4.0.0-0
@@ -9568,7 +9704,7 @@ packages:
       '@vue/compiler-dom': 3.3.8
       kolorist: 1.8.0
       magic-string: 0.30.5
-      vite: 4.5.0
+      vite: 5.0.12
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -9604,6 +9740,41 @@ packages:
       esbuild: 0.18.20
       postcss: 8.4.31
       rollup: 3.29.4
+    optionalDependencies:
+      fsevents: 2.3.3
+    dev: true
+
+  /vite@5.0.12:
+    resolution: {integrity: sha512-4hsnEkG3q0N4Tzf1+t6NdN9dg/L3BM+q8SWgbSPnJvrgH2kgdyzfVJwbR1ic69/4uMJJ/3dqDZZE5/WwqW8U1w==}
+    engines: {node: ^18.0.0 || >=20.0.0}
+    hasBin: true
+    peerDependencies:
+      '@types/node': ^18.0.0 || >=20.0.0
+      less: '*'
+      lightningcss: ^1.21.0
+      sass: '*'
+      stylus: '*'
+      sugarss: '*'
+      terser: ^5.4.0
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
+      less:
+        optional: true
+      lightningcss:
+        optional: true
+      sass:
+        optional: true
+      stylus:
+        optional: true
+      sugarss:
+        optional: true
+      terser:
+        optional: true
+    dependencies:
+      esbuild: 0.19.5
+      postcss: 8.4.33
+      rollup: 4.9.6
     optionalDependencies:
       fsevents: 2.3.3
     dev: true
