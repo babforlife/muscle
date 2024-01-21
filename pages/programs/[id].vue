@@ -113,7 +113,7 @@ async function remove() {
 </template>
 
 <style>
-.modal[state="add"]>div {
+.modal[state="add"] > div {
   max-height: 75%;
   overflow: hidden;
 }

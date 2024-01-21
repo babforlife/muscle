@@ -1,12 +1,14 @@
 * { -webkit-tap-highlight-color: transparent; }
+/* stylelint-disable-next-line selector-id-pattern */
 html, body, #__nuxt { height: 100%; }
 body { overflow: hidden; }
 .col { @apply flex flex-col; }
 .row { @apply flex flex-row; }
-.bd-shadow { box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, .25), inset 0 -1px 5px rgba(0, 0, 0, .25); }
+.bd-shadow { box-shadow: 0 0.25rem 0.25rem rgb(0 0 0 / 25%), inset 0 -0.1rem 0.3rem rgba(0 0 0 / 25%); }
 
 .list-item {
   @apply justify-between items-center p-4 mx-4 rounded-xl border shadow-lg bg-white;
+  
   display: flex;
   flex-direction: column;
 }

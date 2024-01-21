@@ -22,7 +22,7 @@ button[theme='danger'] {
 }
 
 a:active, button:active {
-  transform: translateY(1px);
+  transform: translateY(0.1rem);
 }
 
 a:active:disabled, button:active:disabled {

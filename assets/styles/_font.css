@@ -9,11 +9,3 @@ h2 {
 .size-2xl {
   font-size: 1.5rem;
 }
-
-.max-h-1\/2 {
-  max-height: 50%;
-}
-
-.max-w-1\/2 {
-  max-width: 50%;
-}
