@@ -6,7 +6,7 @@ class SeriesExerciseService extends BaseService<SeriesExercise> {
   url = environment.apiUrl + '/exercise'
 
   public async getFromExercise(id: string): Promise<SeriesExercise[]> {
-    return await this.getAll(`${this.url}/${id}/activities`)
+    return await this.getAll(`/${id}/activities`)
   }
 }
 export const seriesExerciseService = new SeriesExerciseService(SeriesExercise)
