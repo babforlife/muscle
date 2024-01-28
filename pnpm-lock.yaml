@@ -55,6 +55,9 @@ devDependencies:
   nuxt:
     specifier: 3.9.3
     version: 3.9.3(eslint@8.56.0)(stylelint@16.2.0)(typescript@5.3.3)(vite@5.0.12)
+  nuxt-security:
+    specifier: 1.0.0
+    version: 1.0.0
   shuutils:
     specifier: 7.7.0
     version: 7.7.0
@@ -2529,6 +2532,13 @@ packages:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
     dev: true
 
+  /basic-auth@2.0.1:
+    resolution: {integrity: sha512-NF+epuEdnUYVlGuhaxbbq+dvJttwLnGY+YixlXlME5KpQ5W3CnXA5cVTneY3SPbPDRkcjMbifrwmFYcClgOZeg==}
+    engines: {node: '>= 0.8'}
+    dependencies:
+      safe-buffer: 5.1.2
+    dev: true
+
   /big-integer@1.6.52:
     resolution: {integrity: sha512-QxD8cf2eVqJOOz63z6JIN9BzvVs/dlySa5HGSBH5xtR8dPteIRQnBxxKqkNTiT6jbDTF6jAfrd4oMcND9RGbQg==}
     engines: {node: '>=0.6'}
@@ -2740,6 +2750,30 @@ packages:
 
   /chardet@0.7.0:
     resolution: {integrity: sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==}
+    dev: true
+
+  /cheerio-select@2.1.0:
+    resolution: {integrity: sha512-9v9kG0LvzrlcungtnJtpGNxY+fzECQKhK4EGJX2vByejiMX84MFNQw4UxPJl3bFbTMw+Dfs37XaIkCwTZfLh4g==}
+    dependencies:
+      boolbase: 1.0.0
+      css-select: 5.1.0
+      css-what: 6.1.0
+      domelementtype: 2.3.0
+      domhandler: 5.0.3
+      domutils: 3.1.0
+    dev: true
+
+  /cheerio@1.0.0-rc.12:
+    resolution: {integrity: sha512-VqR8m68vM46BNnuZ5NtnGBKIE/DfN0cRIzg9n40EIq9NOv90ayxLBXA8fXC5gquFRGJSTRqBq25Jt2ECLR431Q==}
+    engines: {node: '>= 6'}
+    dependencies:
+      cheerio-select: 2.1.0
+      dom-serializer: 2.0.0
+      domhandler: 5.0.3
+      domutils: 3.1.0
+      htmlparser2: 8.0.2
+      parse5: 7.1.2
+      parse5-htmlparser2-tree-adapter: 7.0.0
     dev: true
 
   /chokidar@3.5.3:
@@ -3072,6 +3106,10 @@ packages:
     resolution: {integrity: sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==}
     engines: {node: '>=4'}
     hasBin: true
+    dev: true
+
+  /cssfilter@0.0.10:
+    resolution: {integrity: sha512-FAaLDaplstoRsDR8XGYH51znUN0UY7nMc6Z9/fvE8EXGwvJE9hu7W2vHwx1+bd6gCYnln9nLbzxFTrcO9YQDZw==}
     dev: true
 
   /cssnano-preset-default@6.0.3(postcss@8.4.33):
@@ -6073,6 +6111,33 @@ packages:
       fsevents: 2.3.3
     dev: true
 
+  /nuxt-csurf@1.4.0:
+    resolution: {integrity: sha512-BED0eJpCt3VjAe1+/4Q/weGzPgWax0iHrRuBcIU9O1R4+fjfQTjpyiVtZ81mwcLu19NaH/xT0i7QXSlnPayR+w==}
+    dependencies:
+      '@nuxt/kit': 3.9.3
+      defu: 6.1.4
+      uncsrf: 1.1.1
+    transitivePeerDependencies:
+      - rollup
+      - supports-color
+    dev: true
+
+  /nuxt-security@1.0.0:
+    resolution: {integrity: sha512-3e5oL3uPZvTBbEyN40YNbXNz1RiaFrBqSuGAI80YHBo5SdWjoLXXvAO5TOKiYUYwnRyf7hDuODOeyoe8+qiR/w==}
+    dependencies:
+      '@nuxt/kit': 3.9.3
+      basic-auth: 2.0.1
+      cheerio: 1.0.0-rc.12
+      defu: 6.1.4
+      nuxt-csurf: 1.4.0
+      pathe: 1.1.2
+      unplugin-remove: 0.1.7
+      xss: 1.0.14
+    transitivePeerDependencies:
+      - rollup
+      - supports-color
+    dev: true
+
   /nuxt@3.9.3(eslint@8.56.0)(stylelint@16.2.0)(typescript@5.3.3)(vite@5.0.12):
     resolution: {integrity: sha512-IzBJAJImqCGfspVZzvznrALnFIJ5rPe+VJvY8OiccwRzWT8sEygVRjh3Mc64yWV6P59rz497wp9RBBBhuV2MVA==}
     engines: {node: ^14.18.0 || >=16.10.0}
@@ -6473,6 +6538,19 @@ packages:
     resolution: {integrity: sha512-xDvOoLU5XRrcOZvnI6b8zA6n9O9ejNk/GExuz1yBuWUGn9KA97GI6HTs6u02wKara1CeVmZhH+0TZFdWScR89w==}
     dependencies:
       parse-path: 7.0.0
+    dev: true
+
+  /parse5-htmlparser2-tree-adapter@7.0.0:
+    resolution: {integrity: sha512-B77tOZrqqfUfnVcOrUvfdLbz4pu4RopLD/4vmu3HUPswwTA8OH0EMW9BlWR2B0RCoiZRAHEUu7IxeP1Pd1UU+g==}
+    dependencies:
+      domhandler: 5.0.3
+      parse5: 7.1.2
+    dev: true
+
+  /parse5@7.1.2:
+    resolution: {integrity: sha512-Czj1WaSVpaoj0wbhMzLmWD69anp2WH7FXMB9n1Sy8/ZFF9jolSQVMu1Ij5WIyGmcBmhk7EOndpO4mIpihVqAXw==}
+    dependencies:
+      entities: 4.5.0
     dev: true
 
   /parseurl@1.3.3:
@@ -8283,6 +8361,10 @@ packages:
     resolution: {integrity: sha512-Ql87qFHB3s/De2ClA9e0gsnS6zXG27SkTiSJwjCc9MebbfapQfuPzumMIUMi38ezPZVNFcHI9sUIepeQfw8J8Q==}
     dev: true
 
+  /uncsrf@1.1.1:
+    resolution: {integrity: sha512-wH9+N3oNdr2XB3egUKxCR26XTVfYywv2STZYtZLIp8votOf0/9b0axA9gpIHdYfgq/Myfh/HS5e0lQ/+27dj9A==}
+    dev: true
+
   /unctx@2.3.1:
     resolution: {integrity: sha512-PhKke8ZYauiqh3FEMVNm7ljvzQiph0Mt3GBRve03IJm7ukfaON2OBK795tLwhbyfzknuRRkW0+Ze+CQUmzOZ+A==}
     dependencies:
@@ -8364,6 +8446,16 @@ packages:
   /universalify@2.0.1:
     resolution: {integrity: sha512-gptHNQghINnc/vTGIk0SOFGFNXw7JVrlRUtConJRlvaw6DuX0wO5Jeko9sWrMBhh+PsYAZ7oXAiOnf/UKogyiw==}
     engines: {node: '>= 10.0.0'}
+    dev: true
+
+  /unplugin-remove@0.1.7:
+    resolution: {integrity: sha512-7BaEfgR/hMQRgaN++RAILeq9/wBrJPqCLRsQH+ow8979s2TE3TAFE4rQRmMUPcJ/w4ccsVSLepwGbimLMkQjyA==}
+    dependencies:
+      '@rollup/pluginutils': 5.1.0(rollup@4.9.6)
+      magic-string: 0.30.5
+      unplugin: 1.6.0
+    transitivePeerDependencies:
+      - rollup
     dev: true
 
   /unplugin-vue-router@0.7.0(vue-router@4.2.5)(vue@3.4.15):
@@ -8964,6 +9056,15 @@ packages:
   /xml-name-validator@4.0.0:
     resolution: {integrity: sha512-ICP2e+jsHvAj2E2lIHxa5tjXRlKDJo4IdvPvCXbXQGdzSfmSpNVyIKMvoZHjDY9DP0zV17iI85o90vRFXNccRw==}
     engines: {node: '>=12'}
+    dev: true
+
+  /xss@1.0.14:
+    resolution: {integrity: sha512-og7TEJhXvn1a7kzZGQ7ETjdQVS2UfZyTlsEdDOqvQF7GoxNfY+0YLCzBy1kPdsDDx4QuNAonQPddpsn6Xl/7sw==}
+    engines: {node: '>= 0.10.0'}
+    hasBin: true
+    dependencies:
+      commander: 2.20.3
+      cssfilter: 0.0.10
     dev: true
 
   /y18n@5.0.8:
