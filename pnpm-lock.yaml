@@ -56,8 +56,8 @@ devDependencies:
     specifier: 3.10.0
     version: 3.10.0(eslint@8.56.0)(stylelint@16.2.0)(typescript@5.3.3)(vite@5.0.12)
   nuxt-security:
-    specifier: 1.0.1
-    version: 1.0.1
+    specifier: 1.1.0
+    version: 1.1.0
   shuutils:
     specifier: 7.7.0
     version: 7.7.0
@@ -6414,7 +6414,7 @@ packages:
   /nuxt-csurf@1.4.0:
     resolution: {integrity: sha512-BED0eJpCt3VjAe1+/4Q/weGzPgWax0iHrRuBcIU9O1R4+fjfQTjpyiVtZ81mwcLu19NaH/xT0i7QXSlnPayR+w==}
     dependencies:
-      '@nuxt/kit': 3.9.3
+      '@nuxt/kit': 3.10.0
       defu: 6.1.4
       uncsrf: 1.1.1
     transitivePeerDependencies:
@@ -6422,10 +6422,10 @@ packages:
       - supports-color
     dev: true
 
-  /nuxt-security@1.0.1:
-    resolution: {integrity: sha512-GT504TFIJn0sM6yhdiUIf5EXoakYir0zs/2KO4uLqcP6XyX7FDj/SW0D3r8EvK80peL2dPvcWRmYRaqo1vPU2g==}
+  /nuxt-security@1.1.0:
+    resolution: {integrity: sha512-nsvdUQbHjpGPNRUYi+ZDB5yUGL7rjTIhTxpuZwqxJuOPwAbw19S2DlgE+HTxn9CmzTCv8231lEhpD5G/Y4uG7g==}
     dependencies:
-      '@nuxt/kit': 3.9.3
+      '@nuxt/kit': 3.10.0
       basic-auth: 2.0.1
       cheerio: 1.0.0-rc.12
       defu: 6.1.4
