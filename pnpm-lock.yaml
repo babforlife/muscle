@@ -56,8 +56,8 @@ devDependencies:
     specifier: 3.10.1
     version: 3.10.1(eslint@8.56.0)(stylelint@16.2.1)(typescript@5.3.3)(vite@5.0.12)
   nuxt-security:
-    specifier: 1.1.0
-    version: 1.1.0
+    specifier: 1.1.1
+    version: 1.1.1
   shuutils:
     specifier: 7.7.0
     version: 7.7.0
@@ -5754,13 +5754,6 @@ packages:
       magic-string: 0.30.7
     dev: true
 
-  /magic-string@0.30.5:
-    resolution: {integrity: sha512-7xlpfBaQaP/T6Vh8MO/EqXSW5En6INHEvEXQiuff7Gku0PWjU3uf6w/j9o7O+SpB5fOAkrI5HeoNgwjEO0pFsA==}
-    engines: {node: '>=12'}
-    dependencies:
-      '@jridgewell/sourcemap-codec': 1.4.15
-    dev: true
-
   /magic-string@0.30.7:
     resolution: {integrity: sha512-8vBuFF/I/+OSLRmdf2wwFCJCz+nSn0m6DPvGH1fS/KiQoSaR+sETbov0eIk9KhEKy8CYqIkIAnbohxT/4H0kuA==}
     engines: {node: '>=12'}
@@ -6405,7 +6398,7 @@ packages:
   /nuxt-csurf@1.4.0:
     resolution: {integrity: sha512-BED0eJpCt3VjAe1+/4Q/weGzPgWax0iHrRuBcIU9O1R4+fjfQTjpyiVtZ81mwcLu19NaH/xT0i7QXSlnPayR+w==}
     dependencies:
-      '@nuxt/kit': 3.10.0
+      '@nuxt/kit': 3.10.1
       defu: 6.1.4
       uncsrf: 1.1.1
     transitivePeerDependencies:
@@ -6413,10 +6406,10 @@ packages:
       - supports-color
     dev: true
 
-  /nuxt-security@1.1.0:
-    resolution: {integrity: sha512-nsvdUQbHjpGPNRUYi+ZDB5yUGL7rjTIhTxpuZwqxJuOPwAbw19S2DlgE+HTxn9CmzTCv8231lEhpD5G/Y4uG7g==}
+  /nuxt-security@1.1.1:
+    resolution: {integrity: sha512-mwCF5P3ukHvh6Gq0mI/0Ioh57Ws55xNsKv2By9EfADHc3L9etxHnhoicanA4hcy5VxUNqxvVK0vZ/+MpE98rvw==}
     dependencies:
-      '@nuxt/kit': 3.10.0
+      '@nuxt/kit': 3.10.1
       basic-auth: 2.0.1
       cheerio: 1.0.0-rc.12
       defu: 6.1.4
@@ -8743,7 +8736,7 @@ packages:
     resolution: {integrity: sha512-7BaEfgR/hMQRgaN++RAILeq9/wBrJPqCLRsQH+ow8979s2TE3TAFE4rQRmMUPcJ/w4ccsVSLepwGbimLMkQjyA==}
     dependencies:
       '@rollup/pluginutils': 5.1.0(rollup@4.9.6)
-      magic-string: 0.30.5
+      magic-string: 0.30.7
       unplugin: 1.6.0
     transitivePeerDependencies:
       - rollup
