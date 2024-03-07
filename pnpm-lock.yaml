@@ -56,8 +56,8 @@ devDependencies:
     specifier: 3.10.3
     version: 3.10.3(eslint@8.57.0)(stylelint@16.2.1)(typescript@5.3.3)(vite@5.1.5)
   nuxt-security:
-    specifier: 1.2.1
-    version: 1.2.1
+    specifier: 1.2.2
+    version: 1.2.2
   shuutils:
     specifier: 7.7.0
     version: 7.7.0
@@ -6424,8 +6424,8 @@ packages:
       - supports-color
     dev: true
 
-  /nuxt-security@1.2.1:
-    resolution: {integrity: sha512-x6FfMWU/yATA4KmanhnNfqZuGQtbYDZn5dHpje808kBMwhO9qjqhWUlk1Nxkw5Txwj8jLDaXZCJryEC8X5Mp4w==}
+  /nuxt-security@1.2.2:
+    resolution: {integrity: sha512-/g2gjl4ReruHe2RDv+LkWvkNFXl2GMKLvDQgdEuMPTrL+9fYARkdCKC2iDvPaBp0EymlFDVGIjtlzLAxAWkgbg==}
     dependencies:
       '@nuxt/kit': 3.10.3
       basic-auth: 2.0.1
