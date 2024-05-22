@@ -12,11 +12,11 @@ importers:
         specifier: 2.1.3
         version: 2.1.3(vue@3.4.22(typescript@5.4.5))
       highcharts:
-        specifier: 11.4.1
-        version: 11.4.1
+        specifier: 11.4.3
+        version: 11.4.3
       highcharts-vue:
         specifier: 1.4.3
-        version: 1.4.3(highcharts@11.4.1)(vue@3.4.22(typescript@5.4.5))
+        version: 1.4.3(highcharts@11.4.3)(vue@3.4.22(typescript@5.4.5))
     devDependencies:
       '@nuxtjs/eslint-config-typescript':
         specifier: 12.1.0
@@ -1515,6 +1515,7 @@ packages:
   are-we-there-yet@2.0.0:
     resolution: {integrity: sha512-Ci/qENmwHnsYo9xKIcUJN5LeDKdJ6R1Z1j9V/J5wyq8nh/mYPEpIKJbBZXtZjG04HiK7zV/p6Vs9952MrMeUIw==}
     engines: {node: '>=10'}
+    deprecated: This package is no longer supported.
 
   arg@5.0.2:
     resolution: {integrity: sha512-PYjyFOLKQ9y57JvQ6QLo8dAgNqswh8M1RMJYdQduT6xbWSgK36P/Z/v+p888pM69jMMfS8Xd8F6I1kQ/I9HUGg==}
@@ -2520,6 +2521,7 @@ packages:
   gauge@3.0.2:
     resolution: {integrity: sha512-+5J6MS/5XksCuXq++uFRsnUd7Ovu1XenbeuIuNRJxYWjgQbPuFhT14lAvsWfqfAmnwluf1OwMjz39HjfLPci0Q==}
     engines: {node: '>=10'}
+    deprecated: This package is no longer supported.
 
   gensync@1.0.0-beta.2:
     resolution: {integrity: sha512-3hN7NaskYvMDLQY55gnW3NQ+mesEAepTqlg+VEbj7zzqEMBVNhzcGYYeqFo/TlYz6eQiFcp1HcsCZO+nGgS8zg==}
@@ -2694,8 +2696,8 @@ packages:
       highcharts: '>=5.0.0'
       vue: '>=1.0.0'
 
-  highcharts@11.4.1:
-    resolution: {integrity: sha512-t+BjB4hba5rNheczCrpyDz8BJrqGdgECHaaXQrgbf1mRdPMPemlOfo08/kTMgZ/Kp/Xfj015atdXpUFdwUU12Q==}
+  highcharts@11.4.3:
+    resolution: {integrity: sha512-rMmvYvcdwyUVfnRPfiZ0PnW6TgVhoS0FTBI8fc4Fp8l8ocoC9dMecvxS6E6tm7h7LrnSGoEo3b/0IRHuLatD2w==}
 
   hookable@5.5.3:
     resolution: {integrity: sha512-Yc+BQe8SvoXH1643Qez1zqLRmbA5rCL+sSmk6TVos0LWVfNIB7PGncdlId77WzLGSIB5KaWgTaNTs2lNVEI6VQ==}
@@ -3515,6 +3517,7 @@ packages:
 
   npmlog@5.0.1:
     resolution: {integrity: sha512-AqZtDUWOMKs1G/8lwylVjrdYgqA4d9nu8hc+0gzRxlDb1I10+FHBGMXs6aiQHFdCUUlqH99MUMuLfzWDNDtfxw==}
+    deprecated: This package is no longer supported.
 
   nth-check@2.1.1:
     resolution: {integrity: sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==}
@@ -4052,6 +4055,7 @@ packages:
   read-package-json@7.0.0:
     resolution: {integrity: sha512-uL4Z10OKV4p6vbdvIXB+OzhInYtIozl/VxUBPgNkBuUi2DeRonnuspmaVAMcrkmfjKGNmRndyQAbE7/AmzGwFg==}
     engines: {node: ^16.14.0 || >=18.0.0}
+    deprecated: This package is no longer supported. Please use @npmcli/package-json instead.
 
   read-pkg-up@7.0.1:
     resolution: {integrity: sha512-zK0TB7Xd6JpCLmlLmufqykGE+/TlOePD6qKClNW7hHDKFh/J7/7gCWGR7joEQEW1bKq3a3yUZSObOoWLFQ4ohg==}
@@ -8323,12 +8327,12 @@ snapshots:
 
   headers-polyfill@4.0.2: {}
 
-  highcharts-vue@1.4.3(highcharts@11.4.1)(vue@3.4.22(typescript@5.4.5)):
+  highcharts-vue@1.4.3(highcharts@11.4.3)(vue@3.4.22(typescript@5.4.5)):
     dependencies:
-      highcharts: 11.4.1
+      highcharts: 11.4.3
       vue: 3.4.22(typescript@5.4.5)
 
-  highcharts@11.4.1: {}
+  highcharts@11.4.3: {}
 
   hookable@5.5.3: {}
 
