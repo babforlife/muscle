@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@heroicons/vue':
-        specifier: 2.1.4
-        version: 2.1.4(vue@3.4.31(typescript@5.5.3))
+        specifier: 2.1.5
+        version: 2.1.5(vue@3.4.31(typescript@5.5.3))
       highcharts:
         specifier: 11.4.3
         version: 11.4.3
@@ -840,8 +840,8 @@ packages:
     resolution: {integrity: sha512-+KpH+QxZU7O4675t3mnkQKcZZg56u+K/Ct2K+N2AZYNVK8kyeo/bI18tI8aPm3tvNNRyTWfj6s5tnGNlcbQRsA==}
     engines: {node: '>=14'}
 
-  '@heroicons/vue@2.1.4':
-    resolution: {integrity: sha512-wykVSZ/fqEG49lIeHgFGT9TCvBw9THuRTtA/sPp7FVk3iBob/HcmitMcLDwtXOW82TXb38HeLRl1/pcElPeSdg==}
+  '@heroicons/vue@2.1.5':
+    resolution: {integrity: sha512-IpqR72sFqFs55kyKfFS7tN+Ww6odFNeH/7UxycIOrlVYfj4WUGAdzQtLBnJspucSeqWFQsKM0g0YrgU655BEfA==}
     peerDependencies:
       vue: '>= 3'
 
@@ -5672,7 +5672,7 @@ snapshots:
 
   '@fastify/busboy@2.1.0': {}
 
-  '@heroicons/vue@2.1.4(vue@3.4.31(typescript@5.5.3))':
+  '@heroicons/vue@2.1.5(vue@3.4.31(typescript@5.5.3))':
     dependencies:
       vue: 3.4.31(typescript@5.5.3)
 
