@@ -15,7 +15,7 @@
     "eslint-plugin-nuxt": "4.0.0",
     "eslint-plugin-unicorn": "50.0.1",
     "eslint-plugin-vue": "9.27.0",
-    "msw": "2.3.4",
+    "msw": "2.3.5",
     "normalize.css": "8.0.1",
     "npm-run-all2": "5.0.2",
     "nuxt": "3.12.4",
