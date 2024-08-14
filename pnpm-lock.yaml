@@ -12,11 +12,11 @@ importers:
         specifier: 2.1.5
         version: 2.1.5(vue@3.4.32(typescript@5.5.4))
       highcharts:
-        specifier: 11.4.6
-        version: 11.4.6
+        specifier: 11.4.7
+        version: 11.4.7
       highcharts-vue:
         specifier: 1.4.3
-        version: 1.4.3(highcharts@11.4.6)(vue@3.4.32(typescript@5.5.4))
+        version: 1.4.3(highcharts@11.4.7)(vue@3.4.32(typescript@5.5.4))
     devDependencies:
       '@nuxtjs/eslint-config-typescript':
         specifier: 12.1.0
@@ -2788,8 +2788,8 @@ packages:
       highcharts: '>=5.0.0'
       vue: '>=1.0.0'
 
-  highcharts@11.4.6:
-    resolution: {integrity: sha512-ntFZ053giEEquAxza+HlOWiLQyCLOjQ3M3EV4r6LoSNKS/fz2S0EKGl8G7Jls9EaYmdAHecB/vL4hGI2J1Ud9g==}
+  highcharts@11.4.7:
+    resolution: {integrity: sha512-4FQTaV/9DtYal6U8rCgGeFWzzoL5QoKowpzyGlG0sp+UJKjm9G9t4bvyz+odvXt+YcqUvK9GEspdLoBnKSWGVA==}
 
   hookable@5.5.3:
     resolution: {integrity: sha512-Yc+BQe8SvoXH1643Qez1zqLRmbA5rCL+sSmk6TVos0LWVfNIB7PGncdlId77WzLGSIB5KaWgTaNTs2lNVEI6VQ==}
@@ -8158,12 +8158,12 @@ snapshots:
 
   headers-polyfill@4.0.2: {}
 
-  highcharts-vue@1.4.3(highcharts@11.4.6)(vue@3.4.32(typescript@5.5.4)):
+  highcharts-vue@1.4.3(highcharts@11.4.7)(vue@3.4.32(typescript@5.5.4)):
     dependencies:
-      highcharts: 11.4.6
+      highcharts: 11.4.7
       vue: 3.4.32(typescript@5.5.4)
 
-  highcharts@11.4.6: {}
+  highcharts@11.4.7: {}
 
   hookable@5.5.3: {}
 
