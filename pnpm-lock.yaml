@@ -76,8 +76,8 @@ importers:
         specifier: 36.0.1
         version: 36.0.1(stylelint@16.11.0(typescript@5.7.2))
       tailwindcss:
-        specifier: 3.4.16
-        version: 3.4.16
+        specifier: 3.4.17
+        version: 3.4.17
       typescript:
         specifier: 5.7.2
         version: 5.7.2
@@ -3254,10 +3254,6 @@ packages:
     resolution: {integrity: sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ==}
     engines: {node: '>= 0.8.0'}
 
-  lilconfig@3.1.2:
-    resolution: {integrity: sha512-eop+wDAvpItUys0FWkHIKeC9ybYrTGbU41U5K7+bttZZeohvnY7M9dZ5kB21GNWiFT2q1OoPTvncPCgSOVO5ow==}
-    engines: {node: '>=14'}
-
   lilconfig@3.1.3:
     resolution: {integrity: sha512-/vlFKAoH5Cgt3Ie+JLhRbwOsCQePABiU3tJ1egGvyQ+33R/vcwM2Zl2QR/LzjsBeItPt3oSVXapn+m4nQDvpzw==}
     engines: {node: '>=14'}
@@ -4571,8 +4567,8 @@ packages:
     peerDependencies:
       tailwindcss: 1 || 2 || 2.0.1-compat || 3
 
-  tailwindcss@3.4.16:
-    resolution: {integrity: sha512-TI4Cyx7gDiZ6r44ewaJmt0o6BrMCT5aK5e0rmJ/G9Xq3w7CX/5VXl/zIPEJZFUK5VEqwByyhqNPycPlvcK4ZNw==}
+  tailwindcss@3.4.17:
+    resolution: {integrity: sha512-w33E2aCvSDP0tW9RZuNXadXlkHXqFzSkQew/aIa2i/Sj8fThxwovwlXHSPXTbAHwEIhBFXAedUhP2tueAKP8Og==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -6383,8 +6379,8 @@ snapshots:
       pathe: 1.1.2
       postcss: 8.4.47
       postcss-nesting: 13.0.0(postcss@8.4.47)
-      tailwind-config-viewer: 2.0.4(tailwindcss@3.4.16)
-      tailwindcss: 3.4.16
+      tailwind-config-viewer: 2.0.4(tailwindcss@3.4.17)
+      tailwindcss: 3.4.17
       ufo: 1.5.4
       unctx: 2.3.1(webpack-sources@3.2.3)
     transitivePeerDependencies:
@@ -7613,7 +7609,7 @@ snapshots:
   cssnano@7.0.6(postcss@8.4.49):
     dependencies:
       cssnano-preset-default: 7.0.6(postcss@8.4.49)
-      lilconfig: 3.1.2
+      lilconfig: 3.1.3
       postcss: 8.4.49
 
   csso@5.0.5:
@@ -8907,8 +8903,6 @@ snapshots:
     dependencies:
       prelude-ls: 1.2.1
       type-check: 0.4.0
-
-  lilconfig@3.1.2: {}
 
   lilconfig@3.1.3: {}
 
@@ -10466,7 +10460,7 @@ snapshots:
       string-width: 4.2.3
       strip-ansi: 6.0.1
 
-  tailwind-config-viewer@2.0.4(tailwindcss@3.4.16):
+  tailwind-config-viewer@2.0.4(tailwindcss@3.4.17):
     dependencies:
       '@koa/router': 12.0.1
       commander: 6.2.1
@@ -10476,11 +10470,11 @@ snapshots:
       open: 7.4.2
       portfinder: 1.0.32
       replace-in-file: 6.3.5
-      tailwindcss: 3.4.16
+      tailwindcss: 3.4.17
     transitivePeerDependencies:
       - supports-color
 
-  tailwindcss@3.4.16:
+  tailwindcss@3.4.17:
     dependencies:
       '@alloc/quick-lru': 5.2.0
       arg: 5.0.2
