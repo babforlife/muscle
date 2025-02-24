@@ -61,8 +61,8 @@ importers:
         specifier: 1.4.3
         version: 1.4.3(magicast@0.3.5)(rollup@4.24.4)(webpack-sources@3.2.3)
       shuutils:
-        specifier: 7.7.0
-        version: 7.7.0
+        specifier: 10.5.0
+        version: 10.5.0
       stylelint:
         specifier: 16.14.1
         version: 16.14.1(typescript@5.7.3)
@@ -4466,8 +4466,8 @@ packages:
   shell-quote@1.8.1:
     resolution: {integrity: sha512-6j1W9l1iAs/4xYBI1SYOVZyFcCis9b4KCLQ8fgAGG07QvzaRLVVRQvAy85yNmmZSjYjg4MWh4gNvlPujU/5LpA==}
 
-  shuutils@7.7.0:
-    resolution: {integrity: sha512-ultnGsBIR9zdHCFDxqWO9YlUBfDa5+oXSi5Gi45o5ne30cNunDzr6sKRntks73VhmgBXQG4IhlbxW3t3cIpfLw==}
+  shuutils@10.5.0:
+    resolution: {integrity: sha512-XIBlpWI8zIRYV1f1hdIApAPtsThzqBkIoLfBpmbQY+RVTwDn3mtfJ/ir3ifhdsnoQjcDKkcdiJGdnoLje/KU3w==}
     hasBin: true
 
   side-channel@1.0.4:
@@ -10480,7 +10480,7 @@ snapshots:
 
   shell-quote@1.8.1: {}
 
-  shuutils@7.7.0:
+  shuutils@10.5.0:
     dependencies:
       tiny-glob: 0.2.9
 
