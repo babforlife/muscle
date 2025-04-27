@@ -56,7 +56,7 @@ importers:
         version: 5.0.2
       nuxt:
         specifier: 3.16.2
-        version: 3.16.2(@parcel/watcher@2.4.1)(@types/node@22.7.8)(db0@0.3.1)(encoding@0.1.13)(eslint@8.57.1)(ioredis@5.6.0)(magicast@0.3.5)(meow@13.2.0)(rollup@4.37.0)(stylelint@16.18.0(typescript@5.8.3))(terser@5.27.0)(typescript@5.8.3)(vite@5.4.17(@types/node@22.7.8)(terser@5.27.0))(yaml@2.7.0)
+        version: 3.16.2(@parcel/watcher@2.4.1)(@types/node@22.7.8)(db0@0.3.1)(encoding@0.1.13)(eslint@8.57.1)(ioredis@5.6.0)(magicast@0.3.5)(meow@13.2.0)(rollup@4.37.0)(stylelint@16.18.0(typescript@5.8.3))(terser@5.27.0)(typescript@5.8.3)(vite@5.4.18(@types/node@22.7.8)(terser@5.27.0))(yaml@2.7.0)
       nuxt-security:
         specifier: 1.4.3
         version: 1.4.3(magicast@0.3.5)(rollup@4.37.0)(webpack-sources@3.2.3)
@@ -82,8 +82,8 @@ importers:
         specifier: 5.8.3
         version: 5.8.3
       vite:
-        specifier: 5.4.17
-        version: 5.4.17(@types/node@22.7.8)(terser@5.27.0)
+        specifier: 5.4.18
+        version: 5.4.18(@types/node@22.7.8)(terser@5.27.0)
       vuedraggable:
         specifier: 4.1.0
         version: 4.1.0(vue@3.5.13(typescript@5.8.3))
@@ -5029,8 +5029,8 @@ packages:
       vite: ^6.0.0
       vue: ^3.5.0
 
-  vite@5.4.17:
-    resolution: {integrity: sha512-5+VqZryDj4wgCs55o9Lp+p8GE78TLVg0lasCH5xFZ4jacZjtqZa6JUw9/p0WeAojaOfncSM6v77InkFPGnvPvg==}
+  vite@5.4.18:
+    resolution: {integrity: sha512-1oDcnEp3lVyHCuQ2YFelM4Alm2o91xNoMncRm1U7S+JdYfYOvbiGZ3/CxGttrOu2M/KcGz7cRC2DoNUA6urmMA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -6180,12 +6180,12 @@ snapshots:
 
   '@nuxt/devalue@2.0.2': {}
 
-  '@nuxt/devtools-kit@2.3.2(magicast@0.3.5)(vite@5.4.17(@types/node@22.7.8)(terser@5.27.0))':
+  '@nuxt/devtools-kit@2.3.2(magicast@0.3.5)(vite@5.4.18(@types/node@22.7.8)(terser@5.27.0))':
     dependencies:
       '@nuxt/kit': 3.16.2(magicast@0.3.5)
       '@nuxt/schema': 3.16.2
       execa: 8.0.1
-      vite: 5.4.17(@types/node@22.7.8)(terser@5.27.0)
+      vite: 5.4.18(@types/node@22.7.8)(terser@5.27.0)
     transitivePeerDependencies:
       - magicast
 
@@ -6200,12 +6200,12 @@ snapshots:
       prompts: 2.4.2
       semver: 7.7.1
 
-  '@nuxt/devtools@2.3.2(vite@5.4.17(@types/node@22.7.8)(terser@5.27.0))(vue@3.5.13(typescript@5.8.3))':
+  '@nuxt/devtools@2.3.2(vite@5.4.18(@types/node@22.7.8)(terser@5.27.0))(vue@3.5.13(typescript@5.8.3))':
     dependencies:
-      '@nuxt/devtools-kit': 2.3.2(magicast@0.3.5)(vite@5.4.17(@types/node@22.7.8)(terser@5.27.0))
+      '@nuxt/devtools-kit': 2.3.2(magicast@0.3.5)(vite@5.4.18(@types/node@22.7.8)(terser@5.27.0))
       '@nuxt/devtools-wizard': 2.3.2
       '@nuxt/kit': 3.16.2(magicast@0.3.5)
-      '@vue/devtools-core': 7.7.2(vite@5.4.17(@types/node@22.7.8)(terser@5.27.0))(vue@3.5.13(typescript@5.8.3))
+      '@vue/devtools-core': 7.7.2(vite@5.4.18(@types/node@22.7.8)(terser@5.27.0))(vue@3.5.13(typescript@5.8.3))
       '@vue/devtools-kit': 7.7.2
       birpc: 2.3.0
       consola: 3.4.2
@@ -6230,9 +6230,9 @@ snapshots:
       sirv: 3.0.1
       structured-clone-es: 1.0.0
       tinyglobby: 0.2.12
-      vite: 5.4.17(@types/node@22.7.8)(terser@5.27.0)
-      vite-plugin-inspect: 11.0.0(@nuxt/kit@3.16.2(magicast@0.3.5))(vite@5.4.17(@types/node@22.7.8)(terser@5.27.0))
-      vite-plugin-vue-tracer: 0.1.3(vite@5.4.17(@types/node@22.7.8)(terser@5.27.0))(vue@3.5.13(typescript@5.8.3))
+      vite: 5.4.18(@types/node@22.7.8)(terser@5.27.0)
+      vite-plugin-inspect: 11.0.0(@nuxt/kit@3.16.2(magicast@0.3.5))(vite@5.4.18(@types/node@22.7.8)(terser@5.27.0))
+      vite-plugin-vue-tracer: 0.1.3(vite@5.4.18(@types/node@22.7.8)(terser@5.27.0))(vue@3.5.13(typescript@5.8.3))
       which: 5.0.0
       ws: 8.18.1
     transitivePeerDependencies:
@@ -6994,14 +6994,14 @@ snapshots:
 
   '@vue/devtools-api@6.6.4': {}
 
-  '@vue/devtools-core@7.7.2(vite@5.4.17(@types/node@22.7.8)(terser@5.27.0))(vue@3.5.13(typescript@5.8.3))':
+  '@vue/devtools-core@7.7.2(vite@5.4.18(@types/node@22.7.8)(terser@5.27.0))(vue@3.5.13(typescript@5.8.3))':
     dependencies:
       '@vue/devtools-kit': 7.7.2
       '@vue/devtools-shared': 7.7.2
       mitt: 3.0.1
       nanoid: 5.1.0
       pathe: 2.0.3
-      vite-hot-client: 0.2.4(vite@5.4.17(@types/node@22.7.8)(terser@5.27.0))
+      vite-hot-client: 0.2.4(vite@5.4.18(@types/node@22.7.8)(terser@5.27.0))
       vue: 3.5.13(typescript@5.8.3)
     transitivePeerDependencies:
       - vite
@@ -9420,11 +9420,11 @@ snapshots:
       - supports-color
       - webpack-sources
 
-  nuxt@3.16.2(@parcel/watcher@2.4.1)(@types/node@22.7.8)(db0@0.3.1)(encoding@0.1.13)(eslint@8.57.1)(ioredis@5.6.0)(magicast@0.3.5)(meow@13.2.0)(rollup@4.37.0)(stylelint@16.18.0(typescript@5.8.3))(terser@5.27.0)(typescript@5.8.3)(vite@5.4.17(@types/node@22.7.8)(terser@5.27.0))(yaml@2.7.0):
+  nuxt@3.16.2(@parcel/watcher@2.4.1)(@types/node@22.7.8)(db0@0.3.1)(encoding@0.1.13)(eslint@8.57.1)(ioredis@5.6.0)(magicast@0.3.5)(meow@13.2.0)(rollup@4.37.0)(stylelint@16.18.0(typescript@5.8.3))(terser@5.27.0)(typescript@5.8.3)(vite@5.4.18(@types/node@22.7.8)(terser@5.27.0))(yaml@2.7.0):
     dependencies:
       '@nuxt/cli': 3.24.1(magicast@0.3.5)
       '@nuxt/devalue': 2.0.2
-      '@nuxt/devtools': 2.3.2(vite@5.4.17(@types/node@22.7.8)(terser@5.27.0))(vue@3.5.13(typescript@5.8.3))
+      '@nuxt/devtools': 2.3.2(vite@5.4.18(@types/node@22.7.8)(terser@5.27.0))(vue@3.5.13(typescript@5.8.3))
       '@nuxt/kit': 3.16.2(magicast@0.3.5)
       '@nuxt/schema': 3.16.2
       '@nuxt/telemetry': 2.6.6(magicast@0.3.5)
@@ -11023,19 +11023,19 @@ snapshots:
 
   vary@1.1.2: {}
 
-  vite-dev-rpc@1.0.7(vite@5.4.17(@types/node@22.7.8)(terser@5.27.0)):
+  vite-dev-rpc@1.0.7(vite@5.4.18(@types/node@22.7.8)(terser@5.27.0)):
     dependencies:
       birpc: 2.3.0
-      vite: 5.4.17(@types/node@22.7.8)(terser@5.27.0)
-      vite-hot-client: 2.0.4(vite@5.4.17(@types/node@22.7.8)(terser@5.27.0))
+      vite: 5.4.18(@types/node@22.7.8)(terser@5.27.0)
+      vite-hot-client: 2.0.4(vite@5.4.18(@types/node@22.7.8)(terser@5.27.0))
 
-  vite-hot-client@0.2.4(vite@5.4.17(@types/node@22.7.8)(terser@5.27.0)):
+  vite-hot-client@0.2.4(vite@5.4.18(@types/node@22.7.8)(terser@5.27.0)):
     dependencies:
-      vite: 5.4.17(@types/node@22.7.8)(terser@5.27.0)
+      vite: 5.4.18(@types/node@22.7.8)(terser@5.27.0)
 
-  vite-hot-client@2.0.4(vite@5.4.17(@types/node@22.7.8)(terser@5.27.0)):
+  vite-hot-client@2.0.4(vite@5.4.18(@types/node@22.7.8)(terser@5.27.0)):
     dependencies:
-      vite: 5.4.17(@types/node@22.7.8)(terser@5.27.0)
+      vite: 5.4.18(@types/node@22.7.8)(terser@5.27.0)
 
   vite-node@3.1.1(@types/node@22.7.8)(terser@5.27.0):
     dependencies:
@@ -11043,7 +11043,7 @@ snapshots:
       debug: 4.4.0
       es-module-lexer: 1.6.0
       pathe: 2.0.3
-      vite: 5.4.17(@types/node@22.7.8)(terser@5.27.0)
+      vite: 5.4.18(@types/node@22.7.8)(terser@5.27.0)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -11073,7 +11073,7 @@ snapshots:
       stylelint: 16.18.0(typescript@5.8.3)
       typescript: 5.8.3
 
-  vite-plugin-inspect@11.0.0(@nuxt/kit@3.16.2(magicast@0.3.5))(vite@5.4.17(@types/node@22.7.8)(terser@5.27.0)):
+  vite-plugin-inspect@11.0.0(@nuxt/kit@3.16.2(magicast@0.3.5))(vite@5.4.18(@types/node@22.7.8)(terser@5.27.0)):
     dependencies:
       ansis: 3.17.0
       debug: 4.4.0
@@ -11083,24 +11083,24 @@ snapshots:
       perfect-debounce: 1.0.0
       sirv: 3.0.1
       unplugin-utils: 0.2.4
-      vite: 5.4.17(@types/node@22.7.8)(terser@5.27.0)
-      vite-dev-rpc: 1.0.7(vite@5.4.17(@types/node@22.7.8)(terser@5.27.0))
+      vite: 5.4.18(@types/node@22.7.8)(terser@5.27.0)
+      vite-dev-rpc: 1.0.7(vite@5.4.18(@types/node@22.7.8)(terser@5.27.0))
     optionalDependencies:
       '@nuxt/kit': 3.16.2(magicast@0.3.5)
     transitivePeerDependencies:
       - supports-color
 
-  vite-plugin-vue-tracer@0.1.3(vite@5.4.17(@types/node@22.7.8)(terser@5.27.0))(vue@3.5.13(typescript@5.8.3)):
+  vite-plugin-vue-tracer@0.1.3(vite@5.4.18(@types/node@22.7.8)(terser@5.27.0))(vue@3.5.13(typescript@5.8.3)):
     dependencies:
       estree-walker: 3.0.3
       exsolve: 1.0.4
       magic-string: 0.30.17
       pathe: 2.0.3
       source-map-js: 1.2.1
-      vite: 5.4.17(@types/node@22.7.8)(terser@5.27.0)
+      vite: 5.4.18(@types/node@22.7.8)(terser@5.27.0)
       vue: 3.5.13(typescript@5.8.3)
 
-  vite@5.4.17(@types/node@22.7.8)(terser@5.27.0):
+  vite@5.4.18(@types/node@22.7.8)(terser@5.27.0):
     dependencies:
       esbuild: 0.21.5
       postcss: 8.5.3
