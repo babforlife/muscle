@@ -52,8 +52,8 @@ importers:
         specifier: 8.0.1
         version: 8.0.1
       npm-run-all2:
-        specifier: 5.0.2
-        version: 5.0.2
+        specifier: 7.0.2
+        version: 7.0.2
       nuxt:
         specifier: 3.17.0
         version: 3.17.0(@netlify/blobs@8.2.0)(@parcel/watcher@2.4.1)(@types/node@22.7.8)(db0@0.3.2)(encoding@0.1.13)(eslint@8.57.1)(ioredis@5.6.1)(magicast@0.3.5)(meow@13.2.0)(rollup@4.40.1)(stylelint@16.18.0(typescript@5.8.3))(terser@5.27.0)(typescript@5.8.3)(vite@5.4.18(@types/node@22.7.8)(terser@5.27.0))(yaml@2.7.0)
@@ -1938,10 +1938,6 @@ packages:
     resolution: {integrity: sha512-zbB9rCJAT1rbjiVDb2hqKFHNYLxgtk8NURxZ3IZwD3F6NtxbXZQCnnSi1Lkx+IDohdPlFp222wVALIheZJQSEg==}
     engines: {node: '>=8'}
 
-  ansi-styles@5.2.0:
-    resolution: {integrity: sha512-Cxwpt2SfTzTtXcfOlzGEee8O+c+MmUgGrNiBcXnuWxuFJHe6a5Hz7qwhwe5OgaSYI0IJvkLqWX1ASG+cJOkEiA==}
-    engines: {node: '>=10'}
-
   ansi-styles@6.2.1:
     resolution: {integrity: sha512-bN798gFfQX+viw3R7yrGWRqnrN2oRkEkUjjl4JNn4E8GxxbjtG3FbrEIIY3l8/hrwUwIeCZvi4QuOTP4MErVug==}
     engines: {node: '>=12'}
@@ -2394,6 +2390,10 @@ packages:
 
   cross-spawn@7.0.3:
     resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
+    engines: {node: '>= 8'}
+
+  cross-spawn@7.0.6:
+    resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
     engines: {node: '>= 8'}
 
   crossws@0.3.4:
@@ -3755,6 +3755,10 @@ packages:
   json-parse-even-better-errors@2.3.1:
     resolution: {integrity: sha512-xyFwyhro/JEof6Ghe2iz2NcXoj2sloNsWr/XsERDK/oiPCfaNhl5ONfp+jQdAZRQQ0IJWNzH9zIZF7li91kh2w==}
 
+  json-parse-even-better-errors@4.0.0:
+    resolution: {integrity: sha512-lR4MXjGNgkJc7tkQ97kb2nuEMnNCyU//XYVH0MKTGcXEiSudQ5MKGKen3C5QubYy0vmq+JGitUg92uuywGEwIA==}
+    engines: {node: ^18.17.0 || >=20.5.0}
+
   json-schema-traverse@0.4.1:
     resolution: {integrity: sha512-xbbCH5dCYU5T8LcEhhuh7HJ88HXuW3qsI3Y0zOZFKfZEHcpWiHU/Jxzk629Brsab/mMiHQti9wMP+845RPe3Vg==}
 
@@ -4259,9 +4263,13 @@ packages:
   normalize.css@8.0.1:
     resolution: {integrity: sha512-qizSNPO93t1YUuUhP22btGOo3chcvDFqFaj2TRybP0DMxkHOCTYwp3n34fel4a31ORXy4m1Xq0Gyqpb5m33qIg==}
 
-  npm-run-all2@5.0.2:
-    resolution: {integrity: sha512-S2G6FWZ3pNWAAKm2PFSOtEAG/N+XO/kz3+9l6V91IY+Y3XFSt7Lp7DV92KCgEboEW0hRTu0vFaMe4zXDZYaOyA==}
-    engines: {node: '>= 10'}
+  npm-normalize-package-bin@4.0.0:
+    resolution: {integrity: sha512-TZKxPvItzai9kN9H/TkmCtx/ZN/hvr3vUycjlfmH0ootY9yFBzNOpiXAdIn1Iteqsvk4lQn6B5PTrt+n6h8k/w==}
+    engines: {node: ^18.17.0 || >=20.5.0}
+
+  npm-run-all2@7.0.2:
+    resolution: {integrity: sha512-7tXR+r9hzRNOPNTvXegM+QzCuMjzUIIq66VDunL6j60O4RrExx32XUhlrS7UK4VcdGw5/Wxzb3kfNcFix9JKDA==}
+    engines: {node: ^18.17.0 || >=20.5.0, npm: '>= 9'}
     hasBin: true
 
   npm-run-path@5.2.0:
@@ -4547,8 +4555,8 @@ packages:
     resolution: {integrity: sha512-M7BAV6Rlcy5u+m6oPhAPFgJTzAioX/6B0DxyvDlo9l8+T3nLKbrczg2WLUyzd45L8RqfUMyGPzekbMvX2Ldkwg==}
     engines: {node: '>=12'}
 
-  pidtree@0.5.0:
-    resolution: {integrity: sha512-9nxspIM7OpZuhBxPg73Zvyq7j1QMPMPsGKTqRc2XOaFQauDvoNz9fM1Wdkjmeo7l9GXOZiRs97sPkuayl39wjA==}
+  pidtree@0.6.0:
+    resolution: {integrity: sha512-eG2dWTVw5bzqGRztnHExczNxt5VGsE6OwTeCG3fdUf9KBsZzO3R5OIIIzWR+iZA0NtZ+RDVdaoE2dK1cn6jH4g==}
     engines: {node: '>=0.10'}
     hasBin: true
 
@@ -4887,6 +4895,10 @@ packages:
 
   read-cache@1.0.0:
     resolution: {integrity: sha512-Owdv/Ft7IjOgm/i0xvNDZ1LrRANRfew4b2prF3OWMQLxLfu3bS8FVhCsrSCMK4lR56Y9ya+AThoTpDCTxCmpRA==}
+
+  read-package-json-fast@4.0.0:
+    resolution: {integrity: sha512-qpt8EwugBWDw2cgE2W+/3oxC+KTez2uSVR8JU9Q36TXPAGCaozfQUs59v4j4GFpWTaw0i6hAZSvOmu1J0uOEUg==}
+    engines: {node: ^18.17.0 || >=20.5.0}
 
   read-package-up@11.0.0:
     resolution: {integrity: sha512-MbgfoNPANMdb4oRBNg5eqLbB2t2r+o5Ua1pNt8BqGp4I0FJZhuVSOj3PaBPni4azWuSzEdNn2evevzVmEk1ohQ==}
@@ -8280,8 +8292,6 @@ snapshots:
     dependencies:
       color-convert: 2.0.1
 
-  ansi-styles@5.2.0: {}
-
   ansi-styles@6.2.1: {}
 
   ansis@3.17.0: {}
@@ -8763,6 +8773,12 @@ snapshots:
   croner@9.0.0: {}
 
   cross-spawn@7.0.3:
+    dependencies:
+      path-key: 3.1.1
+      shebang-command: 2.0.0
+      which: 2.0.2
+
+  cross-spawn@7.0.6:
     dependencies:
       path-key: 3.1.1
       shebang-command: 2.0.0
@@ -9810,7 +9826,7 @@ snapshots:
     dependencies:
       foreground-child: 3.1.1
       jackspeak: 2.3.6
-      minimatch: 9.0.3
+      minimatch: 9.0.5
       minipass: 7.0.4
       path-scurry: 1.10.1
 
@@ -10304,6 +10320,8 @@ snapshots:
   json-buffer@3.0.1: {}
 
   json-parse-even-better-errors@2.3.1: {}
+
+  json-parse-even-better-errors@4.0.0: {}
 
   json-schema-traverse@0.4.1: {}
 
@@ -10881,15 +10899,18 @@ snapshots:
 
   normalize.css@8.0.1: {}
 
-  npm-run-all2@5.0.2:
+  npm-normalize-package-bin@4.0.0: {}
+
+  npm-run-all2@7.0.2:
     dependencies:
-      ansi-styles: 5.2.0
-      cross-spawn: 7.0.3
+      ansi-styles: 6.2.1
+      cross-spawn: 7.0.6
       memorystream: 0.3.1
-      minimatch: 3.1.2
-      pidtree: 0.5.0
-      read-pkg: 5.2.0
+      minimatch: 9.0.5
+      pidtree: 0.6.0
+      read-package-json-fast: 4.0.0
       shell-quote: 1.8.1
+      which: 5.0.0
 
   npm-run-path@5.2.0:
     dependencies:
@@ -11307,7 +11328,7 @@ snapshots:
 
   picomatch@4.0.2: {}
 
-  pidtree@0.5.0: {}
+  pidtree@0.6.0: {}
 
   pify@2.3.0: {}
 
@@ -11634,6 +11655,11 @@ snapshots:
   read-cache@1.0.0:
     dependencies:
       pify: 2.3.0
+
+  read-package-json-fast@4.0.0:
+    dependencies:
+      json-parse-even-better-errors: 4.0.0
+      npm-normalize-package-bin: 4.0.0
 
   read-package-up@11.0.0:
     dependencies:
