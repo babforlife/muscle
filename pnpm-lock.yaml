@@ -61,8 +61,8 @@ importers:
         specifier: 1.4.3
         version: 1.4.3(magicast@0.5.1)(rollup@4.53.3)
       shuutils:
-        specifier: 7.7.0
-        version: 7.7.0
+        specifier: 10.6.0
+        version: 10.6.0
       stylelint:
         specifier: 16.26.0
         version: 16.26.0(typescript@5.9.3)
@@ -5057,8 +5057,8 @@ packages:
     resolution: {integrity: sha512-ObmnIF4hXNg1BqhnHmgbDETF8dLPCggZWBjkQfhZpbszZnYur5DUljTcCHii5LC3J5E0yeO/1LIMyH+UvHQgyw==}
     engines: {node: '>= 0.4'}
 
-  shuutils@7.7.0:
-    resolution: {integrity: sha512-ultnGsBIR9zdHCFDxqWO9YlUBfDa5+oXSi5Gi45o5ne30cNunDzr6sKRntks73VhmgBXQG4IhlbxW3t3cIpfLw==}
+  shuutils@10.6.0:
+    resolution: {integrity: sha512-y3dveSrmnFKIxxIwKN6sSaX6nfCMK8WF20MJWzqqJ1DIFv7MBK9SXoJT4mU7F+w+yz3404vgnDD8wohWC7w1IA==}
     hasBin: true
 
   side-channel-list@1.0.0:
@@ -11778,7 +11778,7 @@ snapshots:
 
   shell-quote@1.8.3: {}
 
-  shuutils@7.7.0:
+  shuutils@10.6.0:
     dependencies:
       tiny-glob: 0.2.9
 
