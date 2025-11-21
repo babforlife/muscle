@@ -52,8 +52,8 @@ importers:
         specifier: 8.0.1
         version: 8.0.1
       npm-run-all2:
-        specifier: 5.0.2
-        version: 5.0.2
+        specifier: 8.0.4
+        version: 8.0.4
       nuxt:
         specifier: 3.20.1
         version: 3.20.1(@netlify/blobs@9.1.2)(@parcel/watcher@2.4.1)(@types/node@22.7.8)(@vue/compiler-sfc@3.5.24)(db0@0.3.4)(encoding@0.1.13)(eslint@8.57.1)(ioredis@5.8.2)(magicast@0.5.1)(meow@13.2.0)(rollup@4.53.3)(stylelint@16.23.1(typescript@5.9.3))(terser@5.27.0)(typescript@5.9.3)(vite@5.4.21(@types/node@22.7.8)(terser@5.27.0))(yaml@2.8.1)
@@ -2015,10 +2015,6 @@ packages:
     resolution: {integrity: sha512-zbB9rCJAT1rbjiVDb2hqKFHNYLxgtk8NURxZ3IZwD3F6NtxbXZQCnnSi1Lkx+IDohdPlFp222wVALIheZJQSEg==}
     engines: {node: '>=8'}
 
-  ansi-styles@5.2.0:
-    resolution: {integrity: sha512-Cxwpt2SfTzTtXcfOlzGEee8O+c+MmUgGrNiBcXnuWxuFJHe6a5Hz7qwhwe5OgaSYI0IJvkLqWX1ASG+cJOkEiA==}
-    engines: {node: '>=10'}
-
   ansi-styles@6.2.1:
     resolution: {integrity: sha512-bN798gFfQX+viw3R7yrGWRqnrN2oRkEkUjjl4JNn4E8GxxbjtG3FbrEIIY3l8/hrwUwIeCZvi4QuOTP4MErVug==}
     engines: {node: '>=12'}
@@ -2465,6 +2461,10 @@ packages:
 
   cross-spawn@7.0.3:
     resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
+    engines: {node: '>= 8'}
+
+  cross-spawn@7.0.6:
+    resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
     engines: {node: '>= 8'}
 
   crossws@0.3.4:
@@ -3719,6 +3719,10 @@ packages:
   json-parse-even-better-errors@2.3.1:
     resolution: {integrity: sha512-xyFwyhro/JEof6Ghe2iz2NcXoj2sloNsWr/XsERDK/oiPCfaNhl5ONfp+jQdAZRQQ0IJWNzH9zIZF7li91kh2w==}
 
+  json-parse-even-better-errors@4.0.0:
+    resolution: {integrity: sha512-lR4MXjGNgkJc7tkQ97kb2nuEMnNCyU//XYVH0MKTGcXEiSudQ5MKGKen3C5QubYy0vmq+JGitUg92uuywGEwIA==}
+    engines: {node: ^18.17.0 || >=20.5.0}
+
   json-schema-traverse@0.4.1:
     resolution: {integrity: sha512-xbbCH5dCYU5T8LcEhhuh7HJ88HXuW3qsI3Y0zOZFKfZEHcpWiHU/Jxzk629Brsab/mMiHQti9wMP+845RPe3Vg==}
 
@@ -4174,9 +4178,13 @@ packages:
   normalize.css@8.0.1:
     resolution: {integrity: sha512-qizSNPO93t1YUuUhP22btGOo3chcvDFqFaj2TRybP0DMxkHOCTYwp3n34fel4a31ORXy4m1Xq0Gyqpb5m33qIg==}
 
-  npm-run-all2@5.0.2:
-    resolution: {integrity: sha512-S2G6FWZ3pNWAAKm2PFSOtEAG/N+XO/kz3+9l6V91IY+Y3XFSt7Lp7DV92KCgEboEW0hRTu0vFaMe4zXDZYaOyA==}
-    engines: {node: '>= 10'}
+  npm-normalize-package-bin@4.0.0:
+    resolution: {integrity: sha512-TZKxPvItzai9kN9H/TkmCtx/ZN/hvr3vUycjlfmH0ootY9yFBzNOpiXAdIn1Iteqsvk4lQn6B5PTrt+n6h8k/w==}
+    engines: {node: ^18.17.0 || >=20.5.0}
+
+  npm-run-all2@8.0.4:
+    resolution: {integrity: sha512-wdbB5My48XKp2ZfJUlhnLVihzeuA1hgBnqB2J9ahV77wLS+/YAJAlN8I+X3DIFIPZ3m5L7nplmlbhNiFDmXRDA==}
+    engines: {node: ^20.5.0 || >=22.0.0, npm: '>= 10'}
     hasBin: true
 
   npm-run-path@5.2.0:
@@ -4459,16 +4467,12 @@ packages:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
 
-  picomatch@4.0.2:
-    resolution: {integrity: sha512-M7BAV6Rlcy5u+m6oPhAPFgJTzAioX/6B0DxyvDlo9l8+T3nLKbrczg2WLUyzd45L8RqfUMyGPzekbMvX2Ldkwg==}
-    engines: {node: '>=12'}
-
   picomatch@4.0.3:
     resolution: {integrity: sha512-5gTmgEY/sqK6gFXLIsQNH19lWb4ebPDLA4SdLP7dsWkIXHWlG66oPuVvXSGFPppYZz8ZDZq0dYYrbHfBCVUb1Q==}
     engines: {node: '>=12'}
 
-  pidtree@0.5.0:
-    resolution: {integrity: sha512-9nxspIM7OpZuhBxPg73Zvyq7j1QMPMPsGKTqRc2XOaFQauDvoNz9fM1Wdkjmeo7l9GXOZiRs97sPkuayl39wjA==}
+  pidtree@0.6.0:
+    resolution: {integrity: sha512-eG2dWTVw5bzqGRztnHExczNxt5VGsE6OwTeCG3fdUf9KBsZzO3R5OIIIzWR+iZA0NtZ+RDVdaoE2dK1cn6jH4g==}
     engines: {node: '>=0.10'}
     hasBin: true
 
@@ -4791,6 +4795,10 @@ packages:
   read-cache@1.0.0:
     resolution: {integrity: sha512-Owdv/Ft7IjOgm/i0xvNDZ1LrRANRfew4b2prF3OWMQLxLfu3bS8FVhCsrSCMK4lR56Y9ya+AThoTpDCTxCmpRA==}
 
+  read-package-json-fast@4.0.0:
+    resolution: {integrity: sha512-qpt8EwugBWDw2cgE2W+/3oxC+KTez2uSVR8JU9Q36TXPAGCaozfQUs59v4j4GFpWTaw0i6hAZSvOmu1J0uOEUg==}
+    engines: {node: ^18.17.0 || >=20.5.0}
+
   read-pkg-up@7.0.1:
     resolution: {integrity: sha512-zK0TB7Xd6JpCLmlLmufqykGE+/TlOePD6qKClNW7hHDKFh/J7/7gCWGR7joEQEW1bKq3a3yUZSObOoWLFQ4ohg==}
     engines: {node: '>=8'}
@@ -5020,9 +5028,6 @@ packages:
   shebang-regex@3.0.0:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
-
-  shell-quote@1.8.1:
-    resolution: {integrity: sha512-6j1W9l1iAs/4xYBI1SYOVZyFcCis9b4KCLQ8fgAGG07QvzaRLVVRQvAy85yNmmZSjYjg4MWh4gNvlPujU/5LpA==}
 
   shell-quote@1.8.3:
     resolution: {integrity: sha512-ObmnIF4hXNg1BqhnHmgbDETF8dLPCggZWBjkQfhZpbszZnYur5DUljTcCHii5LC3J5E0yeO/1LIMyH+UvHQgyw==}
@@ -8207,8 +8212,6 @@ snapshots:
     dependencies:
       color-convert: 2.0.1
 
-  ansi-styles@5.2.0: {}
-
   ansi-styles@6.2.1: {}
 
   ansis@4.1.0: {}
@@ -8723,6 +8726,12 @@ snapshots:
   croner@9.1.0: {}
 
   cross-spawn@7.0.3:
+    dependencies:
+      path-key: 3.1.1
+      shebang-command: 2.0.0
+      which: 2.0.2
+
+  cross-spawn@7.0.6:
     dependencies:
       path-key: 3.1.1
       shebang-command: 2.0.0
@@ -10125,6 +10134,8 @@ snapshots:
 
   json-parse-even-better-errors@2.3.1: {}
 
+  json-parse-even-better-errors@4.0.0: {}
+
   json-schema-traverse@0.4.1: {}
 
   json-schema-traverse@1.0.0: {}
@@ -10672,15 +10683,18 @@ snapshots:
 
   normalize.css@8.0.1: {}
 
-  npm-run-all2@5.0.2:
+  npm-normalize-package-bin@4.0.0: {}
+
+  npm-run-all2@8.0.4:
     dependencies:
-      ansi-styles: 5.2.0
-      cross-spawn: 7.0.3
+      ansi-styles: 6.2.1
+      cross-spawn: 7.0.6
       memorystream: 0.3.1
-      minimatch: 3.1.2
-      pidtree: 0.5.0
-      read-pkg: 5.2.0
-      shell-quote: 1.8.1
+      picomatch: 4.0.3
+      pidtree: 0.6.0
+      read-package-json-fast: 4.0.0
+      shell-quote: 1.8.3
+      which: 5.0.0
 
   npm-run-path@5.2.0:
     dependencies:
@@ -11131,11 +11145,9 @@ snapshots:
 
   picomatch@2.3.1: {}
 
-  picomatch@4.0.2: {}
-
   picomatch@4.0.3: {}
 
-  pidtree@0.5.0: {}
+  pidtree@0.6.0: {}
 
   pify@2.3.0: {}
 
@@ -11437,6 +11449,11 @@ snapshots:
     dependencies:
       pify: 2.3.0
 
+  read-package-json-fast@4.0.0:
+    dependencies:
+      json-parse-even-better-errors: 4.0.0
+      npm-normalize-package-bin: 4.0.0
+
   read-pkg-up@7.0.1:
     dependencies:
       find-up: 4.1.0
@@ -11711,8 +11728,6 @@ snapshots:
       shebang-regex: 3.0.0
 
   shebang-regex@3.0.0: {}
-
-  shell-quote@1.8.1: {}
 
   shell-quote@1.8.3: {}
 
@@ -12302,7 +12317,7 @@ snapshots:
       magic-string: 0.30.18
       mlly: 1.8.0
       pathe: 2.0.3
-      picomatch: 4.0.2
+      picomatch: 4.0.3
       pkg-types: 2.3.0
       scule: 1.3.0
       strip-literal: 3.0.0
